@@ -49,6 +49,10 @@
 		083D22732049FC3800977895 /* pamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		083D22772049FC3800977895 /* pamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pamUITests.swift; sourceTree = "<group>"; };
 		083D22792049FC3800977895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		083D2289204A00ED00977895 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		083D228A204A011E00977895 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		083D228B204A013E00977895 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		083D228D204A01AD00977895 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,10 @@
 		083D22492049FC3800977895 = {
 			isa = PBXGroup;
 			children = (
+				083D228D204A01AD00977895 /* Resources */,
+				083D228B204A013E00977895 /* LICENSE */,
+				083D228A204A011E00977895 /* .gitignore */,
+				083D2289204A00ED00977895 /* README.md */,
 				083D22542049FC3800977895 /* pam */,
 				083D226B2049FC3800977895 /* pamTests */,
 				083D22762049FC3800977895 /* pamUITests */,
