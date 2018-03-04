@@ -33,6 +33,9 @@ xcuserdata/
 *.dSYM.zip
 *.dSYM
 
+# CocoaPods
+#Pods/
+
 ## Swift Package Manager
 .build/
 

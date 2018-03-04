@@ -1,0 +1,6 @@
+framework module Pods_pamTests {
+  umbrella header "Pods-pamTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
