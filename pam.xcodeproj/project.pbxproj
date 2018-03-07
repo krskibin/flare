@@ -15,6 +15,7 @@
 		083D22622049FC3800977895 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 083D22602049FC3800977895 /* LaunchScreen.storyboard */; };
 		083D226D2049FC3800977895 /* pamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D226C2049FC3800977895 /* pamTests.swift */; };
 		083D22782049FC3800977895 /* pamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D22772049FC3800977895 /* pamUITests.swift */; };
+		0847C41F2052BF9C00D99E99 /* docs in Resources */ = {isa = PBXBuildFile; fileRef = 0847C41E2052BF9C00D99E99 /* docs */; };
 		08541641204C271E00BC3EF1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 08541640204C271E00BC3EF1 /* .swiftlint.yml */; };
 		157705F0BE014B8C9E341295 /* Pods_pamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96D6E73AF8B62AC91C617F1 /* Pods_pamUITests.framework */; };
 		483AB3B0A3106F9DE24D6E00 /* Pods_pam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26DC8980D62AD5432B789CF /* Pods_pam.framework */; };
@@ -57,7 +58,8 @@
 		083D2289204A00ED00977895 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		083D228A204A011E00977895 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		083D228B204A013E00977895 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		083D228D204A01AD00977895 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		083D228D204A01AD00977895 /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
+		0847C41E2052BF9C00D99E99 /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = "<group>"; };
 		08541640204C271E00BC3EF1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		085DBDA4204C363600C141FF /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		1A8F6652FE9B58F01EDE22BB /* Pods-pamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pamUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pamUITests/Pods-pamUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +103,8 @@
 		083D22492049FC3800977895 = {
 			isa = PBXGroup;
 			children = (
-				083D228D204A01AD00977895 /* Resources */,
+				0847C41E2052BF9C00D99E99 /* docs */,
+				083D228D204A01AD00977895 /* resources */,
 				083D228B204A013E00977895 /* LICENSE */,
 				085DBDA4204C363600C141FF /* .travis.yml */,
 				08541640204C271E00BC3EF1 /* .swiftlint.yml */,
@@ -300,6 +303,7 @@
 			files = (
 				08541641204C271E00BC3EF1 /* .swiftlint.yml in Resources */,
 				083D22622049FC3800977895 /* LaunchScreen.storyboard in Resources */,
+				0847C41F2052BF9C00D99E99 /* docs in Resources */,
 				083D225F2049FC3800977895 /* Assets.xcassets in Resources */,
 				083D225D2049FC3800977895 /* Main.storyboard in Resources */,
 			);
