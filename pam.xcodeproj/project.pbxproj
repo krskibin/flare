@@ -20,6 +20,8 @@
 		157705F0BE014B8C9E341295 /* Pods_pamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96D6E73AF8B62AC91C617F1 /* Pods_pamUITests.framework */; };
 		483AB3B0A3106F9DE24D6E00 /* Pods_pam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26DC8980D62AD5432B789CF /* Pods_pam.framework */; };
 		83B8D9245B9C4C61D8C50AAE /* Pods_pamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C1A7D1F214AD999BE47C80 /* Pods_pamTests.framework */; };
+		B8236ABD20572B8D0023D9E1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8236ABC20572B8D0023D9E1 /* SettingsViewController.swift */; };
+		B8E4E1E02057D28A00E216C9 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E4E1DF2057D28A00E216C9 /* NewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		9597106F4C5782C45169EF2B /* Pods-pam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pam.release.xcconfig"; path = "Pods/Target Support Files/Pods-pam/Pods-pam.release.xcconfig"; sourceTree = "<group>"; };
 		B26DC8980D62AD5432B789CF /* Pods_pam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2DE4F8B1B45C698CAAFE40C /* Pods-pamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pamTests/Pods-pamTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B8236ABC20572B8D0023D9E1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B8E4E1DF2057D28A00E216C9 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		C5CE8D2AF3DB6CF966903FA0 /* Pods-pamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pamTests/Pods-pamTests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4A565F42BACA4721A92A22 /* Pods-pamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pamUITests/Pods-pamUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F96D6E73AF8B62AC91C617F1 /* Pods_pamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +139,8 @@
 				083D22552049FC3800977895 /* AppDelegate.swift */,
 				083D22572049FC3800977895 /* FirstViewController.swift */,
 				083D22592049FC3800977895 /* SecondViewController.swift */,
+				B8236ABC20572B8D0023D9E1 /* SettingsViewController.swift */,
+				B8E4E1DF2057D28A00E216C9 /* NewsTableViewCell.swift */,
 				083D225B2049FC3800977895 /* Main.storyboard */,
 				083D225E2049FC3800977895 /* Assets.xcassets */,
 				083D22602049FC3800977895 /* LaunchScreen.storyboard */,
@@ -492,7 +498,9 @@
 			files = (
 				083D225A2049FC3800977895 /* SecondViewController.swift in Sources */,
 				083D22562049FC3800977895 /* AppDelegate.swift in Sources */,
+				B8E4E1E02057D28A00E216C9 /* NewsTableViewCell.swift in Sources */,
 				083D22582049FC3800977895 /* FirstViewController.swift in Sources */,
+				B8236ABD20572B8D0023D9E1 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
