@@ -14,9 +14,4 @@ class PamTests: XCTestCase {
         self.measure {
         }
     }
-    
-    func testIsNumberEven() {
-        let _firstViewController = FirstViewController()
-        XCTAssertTrue(_firstViewController.isNumberEven(number: 2))
-    }
 }
