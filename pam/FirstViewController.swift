@@ -1,5 +1,6 @@
 import UIKit
 import Alamofire
+import Kanna
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let elements = ["Apple się kończy", "SGS9 jest super", "Xiaomi podbija Polskę"]
@@ -9,21 +10,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let siteUrl = "https://jsonplaceholder.typicode.com/posts/1"
-        Alamofire.request(siteUrl).responseJSON { (response: DataResponse<Any>) in
-            switch response.result {
-            // swiftlint:disable empty_enum_arguments
-            case .success(_):
-                if response.result.value != nil {
-                    print(response.result.value!)
-                }
-                
-            // swiftlint:disable empty_enum_arguments
-            case .failure(_):
-                print(response.result.error!)
-            }
-            
-        }
+        let pageUrl = "https://spidersweb.pl"
+        scrapPage(pageUrl: pageUrl)
         
         self.navigationController?.navigationBar.prefersLargeTitles = true // big NavBar
         
@@ -47,5 +35,35 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.newsImage.image = UIImage(named: "image")
         cell.newsImage.layer.cornerRadius = 8
         return cell
+    }
+    
+    func scrapPage(pageUrl: String) {
+        Alamofire.request(pageUrl).responseString { response in
+            print("\(response.result.isSuccess)")
+            if let html = response.result.value {
+                self.parseHTML(html: html)
+            }
+        }
+    }
+    
+    func parseHTML(html: String) {
+        // swiftlint:disable identifier_name
+        if let doc = try? HTML(html: html, encoding: .utf8) {
+            print(doc.body?.innerHTML ?? "")
+            for show in doc.css("td[id^='Text']") {
+                
+                var showString = show.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                
+                let regex = try? NSRegularExpression(pattern: "*",
+                                                    options: [.caseInsensitive])
+
+                if regex?.firstMatch(in: showString, options: [],
+                                    range: NSMakeRange(0, showString.count)) != nil {
+                    print(show)
+                    showString += show as! String
+                    print("\(showString)\n")
+                }
+            }
+        }
     }
 }

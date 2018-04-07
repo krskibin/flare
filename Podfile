@@ -19,5 +19,8 @@ target 'pam' do
   end
 
   pod 'Alamofire', '~> 4.7'
+  
+  use_frameworks!
+  pod 'Kanna', '~> 4.0.0'
 
 end
