@@ -12,6 +12,7 @@
 - [Features](#features) 
 - [Dependencies](#dependencies)
 - [Installation](#installation)
+- [Branch Structure](#branches)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -47,6 +48,14 @@ TechFeed is iOS app to manage your favorite tech news services and keep them all
 - Using terminal, go to project directory and run `pod install`
 - Follow pods instructions
 
+## Branches
+> Branch structure
+- **Stable** - contains only stable releases of app
+- **Master** - contains all working app releases
+- **Develop** - contains all working features and prerelases
+- **task-(task-name)** - contains new and "in progress" features
+- **fix-(fix-name)** - contains fixes to features which have been already added to develop
+- **hotfix-(fix-name)* ** - contains fixes to features which have been already added to master
 ## Contributing
 Contributions are always welcome! Please read the contribution guidelines first.
 
