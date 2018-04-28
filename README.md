@@ -17,8 +17,10 @@
 - [License](#license)
 
 ## Description
+#### :warning: This repository is under construction and not ready to use.
 
-TechFeed is iOS app to manage your favorite tech news services and keep them all in one place. You can read articles direcly from the app, customize your sources and adjust article view to your predisposition. It's all in simple and clean design.
+TechFeed is iOS app to manage your favorite tech news services and keep them all in one place. You can read articles direcly from the app, customize your sources and adjust article view to your predisposition. It's all in simple and clean design.  
+> To see full project specification, go to project wiki
 
 ## Features
 
@@ -55,7 +57,7 @@ TechFeed is iOS app to manage your favorite tech news services and keep them all
 - **Develop** - contains all working features and prerelases
 - **task-(task-name)** - contains new and "in progress" features
 - **fix-(fix-name)** - contains fixes to features which have been already added to develop
-- **hotfix-(fix-name)* ** - contains fixes to features which have been already added to master
+- **hotfix-(fix-name)** - contains fixes to features which have been already added to master
 ## Contributing
 Contributions are always welcome! Please read the contribution guidelines first.
 
