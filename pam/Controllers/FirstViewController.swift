@@ -22,7 +22,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         feedParser.parseFeed(urlAddress: "https://developer.apple.com/news/rss/news.rss") { (rssItems) in
             self.rssItems = rssItems
             OperationQueue.main.addOperation {
-                self.newsTableView.reloadSections(IndexSet(integer: 0), with: .left)
+                self.newsTableView.reloadSections(IndexSet(integer: 0), with: .automatic)
             }
         }
     }
