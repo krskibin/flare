@@ -111,11 +111,9 @@
 		0838AFB12095FB9500A6D33E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-                
 				B8E4E1DF2057D28A00E216C9 /* NewsTableViewCell.swift */,
 				B8236ABC20572B8D0023D9E1 /* SettingsViewController.swift */,
 				083D22592049FC3800977895 /* SecondViewController.swift */,
-                B8EAD7D72097575100A55F47 /* NewsViewController.swift */,
 				083D22572049FC3800977895 /* FirstViewController.swift */,
 				083D22552049FC3800977895 /* AppDelegate.swift */,
 			);
@@ -180,10 +178,23 @@
 		083D22542049FC3800977895 /* pam */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				0838AFB42095FC3B00A6D33E /* Supporting Files */,
 				0838AFB32095FBD900A6D33E /* Models */,
 				0838AFB12095FB9500A6D33E /* Controllers */,
 				0838AFB22095FBB600A6D33E /* Views */,
+=======
+				083D22552049FC3800977895 /* AppDelegate.swift */,
+				083D22572049FC3800977895 /* FirstViewController.swift */,
+				B8EAD7D72097575100A55F47 /* NewsViewController.swift */,
+				083D22592049FC3800977895 /* SecondViewController.swift */,
+				B8236ABC20572B8D0023D9E1 /* SettingsViewController.swift */,
+				B8E4E1DF2057D28A00E216C9 /* NewsTableViewCell.swift */,
+				083D225B2049FC3800977895 /* Main.storyboard */,
+				083D225E2049FC3800977895 /* Assets.xcassets */,
+				083D22602049FC3800977895 /* LaunchScreen.storyboard */,
+				083D22632049FC3800977895 /* Info.plist */,
+>>>>>>> Create NewsViewController. #21zv5
 			);
 			path = pam;
 			sourceTree = "<group>";

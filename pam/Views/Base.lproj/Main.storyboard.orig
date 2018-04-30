@@ -12,6 +12,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+<<<<<<< HEAD:pam/Views/Base.lproj/Main.storyboard
+        <!--Articles-->
+=======
         <!--News View Controller-->
         <scene sceneID="zEv-05-9A3">
             <objects>
@@ -73,6 +76,7 @@
             <point key="canvasLocation" x="2345" y="-532"/>
         </scene>
         <!--Test-->
+>>>>>>> Create NewsViewController. #21zv5:pam/Base.lproj/Main.storyboard
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="pam" customModuleProvider="target" sceneMemberID="viewController">
@@ -248,7 +252,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RVq-RU-uFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD:pam/Views/Base.lproj/Main.storyboard
+            <point key="canvasLocation" x="2368.8000000000002" y="-322.48875562218893"/>
+=======
             <point key="canvasLocation" x="2346" y="157"/>
+>>>>>>> Create NewsViewController. #21zv5:pam/Base.lproj/Main.storyboard
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">

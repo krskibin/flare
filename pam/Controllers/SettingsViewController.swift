@@ -1,7 +1,7 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    let versionNumber: Double = 0.1
+    let versionNumber: String = "0.5 alpha"
     @IBOutlet weak var versionViewLabel: UILabel!
     
     override func viewDidLoad() {
