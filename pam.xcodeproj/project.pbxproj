@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0835C401208FF68800BF7FA5 /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835C400208FF68800BF7FA5 /* FeedParser.swift */; };
-		0838AFB62095FE9E00A6D33E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0838AFB52095FE9E00A6D33E /* Default-568h@2x.png */; };
 		083D22562049FC3800977895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D22552049FC3800977895 /* AppDelegate.swift */; };
 		083D22582049FC3800977895 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D22572049FC3800977895 /* FirstViewController.swift */; };
 		083D225A2049FC3800977895 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D22592049FC3800977895 /* SecondViewController.swift */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		0782AD774EB90162B2781E14 /* Pods-pam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pam/Pods-pam.debug.xcconfig"; sourceTree = "<group>"; };
 		0835C400208FF68800BF7FA5 /* FeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
-		0838AFB52095FE9E00A6D33E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		083D22522049FC3800977895 /* pam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		083D22552049FC3800977895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		083D22572049FC3800977895 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 		083D22492049FC3800977895 = {
 			isa = PBXGroup;
 			children = (
-				0838AFB52095FE9E00A6D33E /* Default-568h@2x.png */,
 				0847C41E2052BF9C00D99E99 /* docs */,
 				083D228D204A01AD00977895 /* resources */,
 				083D228B204A013E00977895 /* LICENSE */,
@@ -350,7 +347,6 @@
 				0847C41F2052BF9C00D99E99 /* docs in Resources */,
 				083D225F2049FC3800977895 /* Assets.xcassets in Resources */,
 				083D225D2049FC3800977895 /* Main.storyboard in Resources */,
-				0838AFB62095FE9E00A6D33E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

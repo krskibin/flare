@@ -2,7 +2,6 @@ import UIKit
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var rssItems: [RSSItem]?
-    let elements = ["Apple się kończy", "SGS9 jest super", "Xiaomi podbija Polskę"]
     
     @IBOutlet weak var newsTableView: UITableView!
         
@@ -18,8 +17,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private func fetchData() {
+        let urlAddress: String = "https://developer.apple.com/news/rss/news.rss"
         let feedParser = FeedParser()
-        feedParser.parseFeed(urlAddress: "https://developer.apple.com/news/rss/news.rss") { (rssItems) in
+        feedParser.parseFeed(urlAddress: urlAddress) { (rssItems) in
             self.rssItems = rssItems
             OperationQueue.main.addOperation {
                 self.newsTableView.reloadSections(IndexSet(integer: 0), with: .automatic)

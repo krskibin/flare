@@ -1,10 +1,10 @@
-
-
 # TechFeed
 
 > iOS tech news app
 
 [![Build Status](https://travis-ci.org/krskibin/pam.svg?branch=master)](https://travis-ci.org/krskibin/pam)
+[![Swift](https://img.shields.io/badge/Swift-4.1-green.svg)](https://swift.org)
+[![ios](https://img.shields.io/badge/iOS-10%2B-blue.svg)](https://apple.com)
 
 ## Table of Contents
 
@@ -37,6 +37,7 @@ TechFeed is iOS app to manage your favorite tech news services and keep them all
 
 ##### Developers:
 
+* Swift 4.1
 * Xcode 9.2
 * CocoaPods
 * Gems

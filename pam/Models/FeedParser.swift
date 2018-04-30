@@ -2,6 +2,7 @@ import Foundation
 
 struct RSSItem {
     var title: String
+    var link: String
     var description: String
     var pubDate: String
 }
@@ -15,6 +16,11 @@ class FeedParser: NSObject, XMLParserDelegate {
             currentTitle = currentTitle.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         }
     }
+    private var currentLink: String = "" {
+        didSet {
+            currentLink = currentLink.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        }
+    }
     private var currentDescription: String = "" {
         didSet {
             currentDescription = currentDescription.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
@@ -25,6 +31,7 @@ class FeedParser: NSObject, XMLParserDelegate {
             currentPubDate = currentPubDate.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         }
     }
+
     private var parserCompletionHandler: (([RSSItem]) -> Void)?
     
     func parseFeed(urlAddress: String, completionHandler: (([RSSItem]) -> Void)?) {
@@ -55,6 +62,7 @@ class FeedParser: NSObject, XMLParserDelegate {
         currentElement = elementName
         if currentElement == "item" {
             currentTitle = ""
+            currentLink = ""
             currentDescription = ""
             currentPubDate = ""
         }
@@ -63,6 +71,7 @@ class FeedParser: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         switch currentElement {
         case "title": currentTitle += string
+        case "link": currentLink += string
         case "description" : currentDescription += string
         case "pubDate" : currentPubDate += string
         default: break
@@ -72,7 +81,7 @@ class FeedParser: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String,
                 namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "item" {
-            let rssItem = RSSItem(title: currentTitle, description: currentDescription, pubDate: currentPubDate)
+            let rssItem = RSSItem(title: currentTitle, link: currentLink, description: currentDescription, pubDate: currentPubDate)
             self.rssItems.append(rssItem)
         }
     }
