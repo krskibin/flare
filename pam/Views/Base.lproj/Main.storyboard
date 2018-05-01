@@ -44,9 +44,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbE-Fi-Jbu">
-                                <rect key="frame" x="167" y="356" width="40" height="30"/>
-                                <state key="normal" title="Share"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbE-Fi-Jbu">
+                                <rect key="frame" x="175" y="356" width="24" height="24"/>
+                                <state key="normal" image="ShareIcon"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="2345" y="-532"/>
         </scene>
-        <!--Test-->
+        <!--Articles-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="pam" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,7 +94,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gzj-Fs-GUR">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="105" id="7hk-Wq-jWF" customClass="NewsTableViewCell" customModule="pam" customModuleProvider="target">
@@ -173,7 +173,7 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" title="Articles" id="qJ8-qf-VOI">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="edG-OV-cLX">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" image="SettingsIcon" id="edG-OV-cLX">
                             <connections>
                                 <segue destination="pYt-Ym-xjS" kind="show" id="ZrA-dd-9xN"/>
                             </connections>
@@ -250,7 +250,7 @@
             </objects>
             <point key="canvasLocation" x="2346" y="157"/>
         </scene>
-        <!--Second-->
+        <!--Offline-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="pam" customModuleProvider="target" sceneMemberID="viewController">
@@ -281,7 +281,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Offline" image="OfflineIcon" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -305,14 +305,14 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--First-->
+        <!--Feed-->
         <scene sceneID="MSB-wP-woc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="U0I-MT-QHE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="FeedIcon" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jqS-Tf-a3X">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jqS-Tf-a3X">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -326,9 +326,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FeedIcon" width="24" height="24"/>
+        <image name="OfflineIcon" width="24" height="24"/>
+        <image name="SettingsIcon" width="24" height="24"/>
+        <image name="ShareIcon" width="24" height="24"/>
         <image name="favicon" width="76" height="76"/>
-        <image name="first" width="30" height="30"/>
         <image name="image" width="750" height="469"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>

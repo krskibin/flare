@@ -8,7 +8,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        //self.removeTabbarItemsText()
         
         newsTableView.delegate = self
         newsTableView.dataSource = self
@@ -23,6 +23,15 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.rssItems = rssItems
             OperationQueue.main.addOperation {
                 self.newsTableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+            }
+        }
+    }
+    
+    func removeTabbarItemsText() {
+        if let items = tabBarController?.tabBar.items {
+            for item in items {
+                item.title = ""
+                item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
             }
         }
     }
