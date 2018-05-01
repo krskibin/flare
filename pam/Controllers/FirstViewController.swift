@@ -1,6 +1,8 @@
 import UIKit
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    private var selectedTitle: String?
+    private var selectedDescription: String?
     private var rssItems: [RSSItem]?
     
     @IBOutlet weak var newsTableView: UITableView!
@@ -56,5 +58,21 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.newsImage.image = UIImage(named: "image")
         cell.newsImage.layer.cornerRadius = 8
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedTitle = rssItems?[indexPath.row].title ?? ""
+        selectedDescription = rssItems?[indexPath.row].title ?? ""
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "goToNewsDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToNewsDetail" {
+            if let destinationVC = segue.destination as? NewsViewController {
+                destinationVC.pressedTitle = selectedTitle ?? "Couldn\'t load"
+                destinationVC.pressedDescription = selectedTitle ?? "Couldn\'t load"
+            }
+        }
     }
 }

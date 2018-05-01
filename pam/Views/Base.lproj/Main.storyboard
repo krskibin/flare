@@ -67,6 +67,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fbv-cD-9p8"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="OwV-a7-vqi" id="mDW-Aa-EMm"/>
+                        <outlet property="titleLabel" destination="7Db-HD-o8r" id="WPx-t4-eOA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLs-cf-xiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -153,7 +157,6 @@
                                             <outlet property="faviconImage" destination="XKa-K8-WVa" id="h49-Fi-whQ"/>
                                             <outlet property="newsImage" destination="ljy-lP-1Uf" id="gzL-df-P0d"/>
                                             <outlet property="newsLabel" destination="a8Y-AU-Chi" id="jjx-Th-RhI"/>
-                                            <segue destination="DC9-Dk-fUP" kind="show" id="i0i-HW-qLm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -181,6 +184,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="newsTableView" destination="gzj-Fs-GUR" id="Xsj-EX-gv6"/>
+                        <segue destination="DC9-Dk-fUP" kind="show" identifier="goToNewsDetail" id="rgI-qc-juD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
