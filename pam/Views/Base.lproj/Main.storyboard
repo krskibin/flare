@@ -69,6 +69,7 @@
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="OwV-a7-vqi" id="mDW-Aa-EMm"/>
+                        <outlet property="linkLabel" destination="jny-dM-Z5V" id="qM7-B6-9WQ"/>
                         <outlet property="titleLabel" destination="7Db-HD-o8r" id="WPx-t4-eOA"/>
                     </connections>
                 </viewController>

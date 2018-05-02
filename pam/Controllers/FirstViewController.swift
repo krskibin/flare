@@ -3,6 +3,8 @@ import UIKit
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var selectedTitle: String?
     private var selectedDescription: String?
+    private var selectedLink: String?
+    
     private var rssItems: [RSSItem]?
     
     @IBOutlet weak var newsTableView: UITableView!
@@ -62,7 +64,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTitle = rssItems?[indexPath.row].title ?? ""
-        selectedDescription = rssItems?[indexPath.row].title ?? ""
+        selectedLink = rssItems?[indexPath.row].link ?? ""
+        selectedDescription = rssItems?[indexPath.row].description ?? ""
+        
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "goToNewsDetail", sender: self)
     }
@@ -71,7 +75,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if segue.identifier == "goToNewsDetail" {
             if let destinationVC = segue.destination as? NewsViewController {
                 destinationVC.pressedTitle = selectedTitle ?? "Couldn\'t load"
-                destinationVC.pressedDescription = selectedTitle ?? "Couldn\'t load"
+                destinationVC.pressedDescription = selectedDescription ?? "Couldn\'t load"
+                destinationVC.pressedLink = selectedLink ?? "Coudn\'t load"
             }
         }
     }
