@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		083349DE2098E4AA003CEAF7 /* NewsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083349DD2098E4AA003CEAF7 /* NewsParser.swift */; };
 		0835C401208FF68800BF7FA5 /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835C400208FF68800BF7FA5 /* FeedParser.swift */; };
 		083D22562049FC3800977895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D22552049FC3800977895 /* AppDelegate.swift */; };
 		083D22582049FC3800977895 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D22572049FC3800977895 /* FirstViewController.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		0782AD774EB90162B2781E14 /* Pods-pam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pam/Pods-pam.debug.xcconfig"; sourceTree = "<group>"; };
+		083349DD2098E4AA003CEAF7 /* NewsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsParser.swift; sourceTree = "<group>"; };
 		0835C400208FF68800BF7FA5 /* FeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
 		083D22522049FC3800977895 /* pam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		083D22552049FC3800977895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,11 +113,10 @@
 		0838AFB12095FB9500A6D33E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-                
 				B8E4E1DF2057D28A00E216C9 /* NewsTableViewCell.swift */,
 				B8236ABC20572B8D0023D9E1 /* SettingsViewController.swift */,
 				083D22592049FC3800977895 /* SecondViewController.swift */,
-                B8EAD7D72097575100A55F47 /* NewsViewController.swift */,
+				B8EAD7D72097575100A55F47 /* NewsViewController.swift */,
 				083D22572049FC3800977895 /* FirstViewController.swift */,
 				083D22552049FC3800977895 /* AppDelegate.swift */,
 			);
@@ -136,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				0835C400208FF68800BF7FA5 /* FeedParser.swift */,
+				083349DD2098E4AA003CEAF7 /* NewsParser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -545,6 +547,7 @@
 				B8E4E1E02057D28A00E216C9 /* NewsTableViewCell.swift in Sources */,
 				B8EAD7D82097575100A55F47 /* NewsViewController.swift in Sources */,
 				083D22582049FC3800977895 /* FirstViewController.swift in Sources */,
+				083349DE2098E4AA003CEAF7 /* NewsParser.swift in Sources */,
 				B8236ABD20572B8D0023D9E1 /* SettingsViewController.swift in Sources */,
 				0835C401208FF68800BF7FA5 /* FeedParser.swift in Sources */,
 			);
