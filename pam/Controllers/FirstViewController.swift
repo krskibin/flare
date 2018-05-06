@@ -26,15 +26,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
-    
-    func removeTabbarItemsText() {
-        if let items = tabBarController?.tabBar.items {
-            for item in items {
-                item.title = ""
-                item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
-            }
-        }
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let rssItem = rssItems else {
@@ -56,5 +47,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.newsImage.image = UIImage(named: "image")
         cell.newsImage.layer.cornerRadius = 8
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
