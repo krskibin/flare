@@ -1,6 +1,4 @@
-# TechFeed
-
-> iOS tech news app
+![colors](resources/logo.png)
 
 [![Build Status](https://travis-ci.org/krskibin/pam.svg?branch=master)](https://travis-ci.org/krskibin/pam)
 [![Swift](https://img.shields.io/badge/Swift-4.1-green.svg)](https://swift.org)
