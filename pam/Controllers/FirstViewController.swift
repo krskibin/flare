@@ -4,11 +4,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private var selectedTitle: String?
     private var selectedDescription: String?
     private var selectedLink: String?
+    private var selectedImage: String?
     
-    private var rssItems: [RSSItem]?
+    var articles: [Article]? = []
+    
+    let link = "https://newsapi.org/v2/top-headlines?sources=the-verge&apiKey=d8e20e6ac3064675a2a9733b2e7c96c1"
     
     @IBOutlet weak var newsTableView: UITableView!
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,25 +20,62 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         newsTableView.delegate = self
         newsTableView.dataSource = self
         
-        fetchData()
+        fetchArticles()
     }
     
-    private func fetchData() {
-        let urlAddress: String = "https://developer.apple.com/news/rss/news.rss"
-        let feedParser = FeedParser()
-        feedParser.parseFeed(urlAddress: urlAddress) { (rssItems) in
-            self.rssItems = rssItems
-            OperationQueue.main.addOperation {
-                self.newsTableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+    func fetchArticles() {
+        let urlRequest = URLRequest(url: URL(string: self.link)!)
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            self.articles = [Article]()
+            do {
+                // swiftlint:disable force_cast
+                // swiftlint:disable colon
+                let json = try JSONSerialization.jsonObject(with: data!,
+                                                            options: .mutableContainers) as! [String : AnyObject]
+                // swiftlint:disable colon
+                if let articlesFromJson = json["articles"] as? [[String : AnyObject]] {
+                    for articleFromJson in articlesFromJson {
+                        let article = Article()
+                        
+                        if let title = articleFromJson["title"] as? String,
+                           let author = articleFromJson["author"] as? String,
+                           let desc = articleFromJson["description"] as? String,
+                           let link = articleFromJson["url"] as? String,
+                           let pubDate = articleFromJson["publishedAt"] as? String,
+                           let urlToImage = articleFromJson["urlToImage"] as? String {
+                            
+                            article.author = author
+                            article.desc = desc
+                            article.headline = title
+                            article.link = link
+                            article.imageUrl = urlToImage
+                            article.pubDate = pubDate
+                        }
+                        self.articles?.append(article)
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.newsTableView.reloadData()
+                }
+                
+            } catch let error {
+                print(error)
             }
         }
+        task.resume()
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let rssItem = rssItems else {
+        guard let articles = articles else {
             return 0
         }
-        return rssItem.count
+        return articles.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -45,20 +85,28 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable force_cast
         let cell = newsTableView.dequeueReusableCell(withIdentifier: "customCell") as! NewsTableViewCell
-        cell.newsLabel.text = rssItems?[indexPath.item].title
-        cell.newsLabel.numberOfLines = 0
-        cell.dateLabel.text = rssItems?[indexPath.item].pubDate
-        cell.newsImage.image = UIImage(named: "image")
+        
+        cell.newsLabel.text = articles?[indexPath.item].headline
+        cell.dateLabel.text = articles?[indexPath.item].pubDate
         cell.newsImage.layer.cornerRadius = 8
+        cell.newsLabel.numberOfLines = 0
+        
+        if let imageUrl = self.articles?[indexPath.item].imageUrl {
+            cell.newsImage.downloadImage(from: (imageUrl))
+        } else {
+            cell.newsImage.image = UIImage(named: "image")
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
-        selectedTitle = rssItems?[indexPath.row].title ?? ""
-        selectedLink = rssItems?[indexPath.row].link ?? ""
-        selectedDescription = rssItems?[indexPath.row].description ?? ""
+        
+        selectedTitle = articles?[indexPath.row].headline ?? ""
+        selectedLink = articles?[indexPath.row].link ?? ""
+        selectedDescription = articles?[indexPath.row].desc ?? ""
+        selectedImage = articles?[indexPath.row].imageUrl ?? ""
         
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "goToNewsDetail", sender: self)
@@ -70,7 +118,24 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 destinationVC.pressedTitle = selectedTitle ?? "Couldn\'t load"
                 destinationVC.pressedDescription = selectedDescription ?? "Couldn\'t load"
                 destinationVC.pressedLink = selectedLink ?? "Coudn\'t load"
+                destinationVC.pressedImage = selectedImage ?? ""
             }
         }
+    }
+}
+
+extension UIImageView {
+    func downloadImage(from link: String) {
+        let urlRequest = URLRequest(url: URL(string: link)!)
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            DispatchQueue.main.async {
+                self.image = UIImage(data: data!)
+            }
+        }
+        task.resume()
     }
 }

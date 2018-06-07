@@ -24,13 +24,15 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // swiftlint:disable force_cast
         let cell = sourcesTableView.dequeueReusableCell(withIdentifier: "sourceCell") as! SourceTableViewCell
         cell.sourceLabel.text = sources[indexPath.row]
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle,
+                   forRowAt indexPath: IndexPath) {
      
         if editingStyle == .delete {
          sources.remove(at: indexPath.row)
