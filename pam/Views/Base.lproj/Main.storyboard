@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_7" orientation="portrait">
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
@@ -104,7 +102,6 @@
                         <outlet property="titleLabel" destination="7Db-HD-o8r" id="WPx-t4-eOA"/>
                         <outlet property="topImage" destination="vW5-eb-wNU" id="FI5-PV-S5y"/>
                         <outlet property="descriptionTextView" destination="UlZ-YO-p0a" id="uUo-9n-nJ9"/>
-                        <outlet property="linkLabel" destination="jny-dM-Z5V" id="qM7-B6-9WQ"/>
                         <outlet property="scrollView" destination="rs5-w7-jEi" id="z9a-zA-qXg"/>
                         <outlet property="titleTextView" destination="l3h-1w-DhA" id="2VC-qv-2NB"/>
                     </connections>

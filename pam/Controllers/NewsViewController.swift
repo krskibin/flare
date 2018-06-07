@@ -16,12 +16,13 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
         
-        let imageUrl = URL(string: pressedImage!)
-        let data = try? Data(contentsOf: imageUrl!)
+        if pressedImage != "" {
+            let imageUrl = URL(string: pressedImage!)
+            let data = try? Data(contentsOf: imageUrl!)
         
-        topImage.image = UIImage(data: data!)
+            topImage.image = UIImage(data: data!)
+        }
         
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

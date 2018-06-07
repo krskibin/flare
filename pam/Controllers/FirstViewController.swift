@@ -8,7 +8,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var articles: [Article]? = []
     
-    let link = "https://newsapi.org/v2/top-headlines?sources=the-verge&apiKey=d8e20e6ac3064675a2a9733b2e7c96c1"
+    let link = "https://newsapi.org/v2/top-headlines?country=us&category=technology&pageSize=100&apiKey=d8e20e6ac3064675a2a9733b2e7c96c1"
     
     @IBOutlet weak var newsTableView: UITableView!
     
@@ -35,11 +35,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.articles = [Article]()
             do {
                 // swiftlint:disable force_cast
-                // swiftlint:disable colon
                 let json = try JSONSerialization.jsonObject(with: data!,
-                                                            options: .mutableContainers) as! [String : AnyObject]
-                // swiftlint:disable colon
-                if let articlesFromJson = json["articles"] as? [[String : AnyObject]] {
+                                                            options: .mutableContainers) as! [String: AnyObject]
+
+                if let articlesFromJson = json["articles"] as? [[String: AnyObject]] {
                     for articleFromJson in articlesFromJson {
                         let article = Article()
                         
@@ -57,7 +56,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             article.imageUrl = urlToImage
                             article.pubDate = pubDate
                         }
-                        self.articles?.append(article)
+                        if article.headline != nil {
+                            self.articles?.append(article)
+                        }
                     }
                 }
                 DispatchQueue.main.async {
