@@ -1,18 +1,25 @@
 PODS:
   - Alamofire (4.7.1)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
   - Kanna (4.0.0)
+  - ObjectMapper (3.1.0)
   - SwiftLint (0.25.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - AlamofireObjectMapper (~> 5.0)
   - Kanna (~> 4.0.0)
   - SwiftLint (~> 0.25.0)
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: d94d0fcca98db07c3cd71dbf0643a44c7b940684
+PODFILE CHECKSUM: adc67e426fdd4af61946f2596149506f09da148e
 
 COCOAPODS: 1.4.0

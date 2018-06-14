@@ -72,6 +72,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         task.resume()
     }
     
+    /*func convertTime() -> String {
+        
+        let date = Date()
+        
+        return
+    }*/
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let articles = articles else {
             return 0

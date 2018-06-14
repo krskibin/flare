@@ -12,12 +12,16 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     let categories = ["General", "Mobile", "Programming", "Video Games", "Design"]
     
     var pickerView = UIPickerView()
+    var sources: [String] = []
 
     @IBOutlet weak var categoryInput: UITextField!
     @IBOutlet weak var websiteInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
+        
         categoryInput.inputView = pickerView
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -36,8 +40,15 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
 
     @IBAction func save(_ sender: Any) {
-        //SettingsViewController.addSources(website: websiteInput.text, category: categoryInput.text)
-        self.dismiss(animated: true, completion: nil)
+        
+        if (websiteInput.text)! == "" {
+            websiteInput.layer.shadowColor = UIColor(red:1.00, green:0.27, blue:0.32, alpha:1.0).cgColor
+        } else {
+            UserDefaults.standard.removeObject(forKey: "selectedSitesArray")
+            sources.append((websiteInput.text)!)
+            UserDefaults.standard.set(sources, forKey: "selectedSitesArray")
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

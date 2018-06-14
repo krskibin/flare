@@ -22,5 +22,6 @@ target 'pam' do
   
   use_frameworks!
   pod 'Kanna', '~> 4.0.0'
+  pod 'AlamofireObjectMapper', '~> 5.0'
 
 end

@@ -1,4 +1,5 @@
 import UIKit
+import Alamofire
 
 class NewsViewController: UIViewController, UIScrollViewDelegate {
     var pressedTitle: String?
@@ -39,6 +40,7 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
         titleTextView.text = pressedTitle!
         linkLabel.text = pressedLink!
         descriptionTextView.text = pressedDescription!
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,4 +62,19 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
         setTransluscentNavBar()
     }
+    
+    @IBAction func share(_ sender: Any) {
+        
+        let someText: String = "Hello want to share text also"
+        let objectsToShare: URL = URL(string: "http://www.google.com")!
+        let sharedObjects: [AnyObject] = [objectsToShare as AnyObject,someText as AnyObject]
+        let activityViewController = UIActivityViewController(activityItems: sharedObjects, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        
+        //activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook,UIActivityType.postToTwitter,UIActivityType.mail]
+        
+        self.present(activityViewController, animated: true, completion: nil)
+        
+    }
+    
 }
