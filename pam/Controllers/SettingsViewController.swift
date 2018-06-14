@@ -6,10 +6,12 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var versionViewLabel: UILabel!
     @IBOutlet weak var sourcesTableView: UITableView!
     
-    var sources: [String] = ["Engadget", "The Verge", "IGN", "9to5Mac"]
+    var sources: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
+        print(sources)
         versionViewLabel.text = "version: \(versionNumber)"
         sourcesTableView.delegate = self
         sourcesTableView.dataSource = self
@@ -36,7 +38,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
      
         if editingStyle == .delete {
          sources.remove(at: indexPath.row)
-            
+         UserDefaults.standard.removeObject(forKey: "selectedSitesArray")
+         UserDefaults.standard.set(sources, forKey: "selectedSitesArray")
          tableView.beginUpdates()
          tableView.deleteRows(at: [indexPath], with: .automatic)
          tableView.endUpdates()
