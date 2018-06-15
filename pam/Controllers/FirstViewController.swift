@@ -9,7 +9,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var articles: [Article]? = []
     
-    let link = "https://newsapi.org/v2/top-headlines?country=us&category=technology&pageSize=100&apiKey=d8e20e6ac3064675a2a9733b2e7c96c1"
     
     @IBOutlet weak var newsTableView: UITableView!
     
@@ -25,7 +24,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func fetchArticles() {
-        let urlRequest = URLRequest(url: URL(string: self.link)!)
+        var sourcesString = ""
+        var sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
+        for var source in sources {
+            source = source.replacingOccurrences(of: " ", with: "-")
+            sourcesString.append(source.lowercased())
+            sourcesString.append(",")
+        }
+        var link = "https://newsapi.org/v2/top-headlines?sources=\(sourcesString)&apiKey=d8e20e6ac3064675a2a9733b2e7c96c1"
+        print(link)
+        
+        let urlRequest = URLRequest(url: URL(string: link)!)
         
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
             if error != nil {
@@ -156,8 +165,11 @@ func estimateTime(dateToEstimate: String) -> String {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     let dateDate = formatter.date(from: date)
+    if dateDate != nil {
+        return dateDate!.timeAgoDisplay()
+    }
+    return dateToEstimate
     
-    return dateDate!.timeAgoDisplay()
 }
 
 extension Date {
