@@ -2,7 +2,7 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let versionNumber: String = "0.5 alpha"
+    let versionNumber: String = "0.8"
     @IBOutlet weak var versionViewLabel: UILabel!
     @IBOutlet weak var sourcesTableView: UITableView!
     
@@ -10,8 +10,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isTranslucent = true
         sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
-        print(sources)
         versionViewLabel.text = "version: \(versionNumber)"
         sourcesTableView.delegate = self
         sourcesTableView.dataSource = self

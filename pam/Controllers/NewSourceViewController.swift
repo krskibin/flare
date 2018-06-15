@@ -9,9 +9,9 @@ import UIKit
 
 class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    let categories = ["General", "Mobile", "Programming", "Video Games", "Design"]
+    let categories = ["General", "Mobile", "Programming", "Video Games"]
     
-    var pickerView = UIPickerView()
+    @objc var pickerView = UIPickerView()
     var sources: [String] = []
 
     @IBOutlet weak var categoryInput: UITextField!
@@ -19,7 +19,6 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
         
         categoryInput.inputView = pickerView

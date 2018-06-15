@@ -18,6 +18,8 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.scrollView.scrollsToTop = false
+        self.navigationController?.navigationBar.isTranslucent = true
         
         if pressedImage != "" {
             let imageUrl = URL(string: pressedImage!)
@@ -66,7 +68,6 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
         
         titleTextView.text = pressedTitle!
         linkLabel.text = pressedLink!
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,7 +93,7 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func share(_ sender: Any) {
         
         let someText: String = "Hello want to share text also"
-        let objectsToShare: URL = URL(string: "http://www.google.com")!
+        let objectsToShare: URL = URL(string: pressedLink!)!
         let sharedObjects: [AnyObject] = [objectsToShare as AnyObject, someText as AnyObject]
         let activityViewController = UIActivityViewController(activityItems: sharedObjects, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view

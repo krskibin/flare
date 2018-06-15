@@ -10,12 +10,11 @@ import UIKit
 
 class OnboardingTableViewController: UITableViewController {
     
-    let section = ["General", "Mobile", "Programming", "Video Games", "Design"]
-    let sites = [["The Verge", "Engadget", "Wired", "9to5Mac"],
-                 ["Android Police", "TechRadar"],
-                 ["Developer Tech", "Lifehacker"],
-                 ["IGN", "Eurogamer", "GameSpot"],
-                 ["Brand New", "Co.Design"]]
+    let section = ["General", "Mobile", "Programming", "Video Games"]
+    let sites = [["The Verge", "Engadget", "Wired", "Mashable"],
+                 ["The Next Web", "TechRadar"],
+                 ["Hacker News", "Recode"],
+                 ["IGN", "Polygon"]]
 
     var selectedSites = [String]()
     
@@ -65,6 +64,8 @@ class OnboardingTableViewController: UITableViewController {
             cell?.accessoryType = UITableViewCellAccessoryType.checkmark
             selectedSites.append(sites[indexPath.section][indexPath.row])
         }
+        print(selectedSites)
+        print(indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

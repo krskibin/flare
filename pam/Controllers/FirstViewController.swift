@@ -17,7 +17,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         
         //self.removeTabbarItemsText()
-        
+        newsTableView.scrollsToTop = false
         newsTableView.delegate = self
         newsTableView.dataSource = self
         
