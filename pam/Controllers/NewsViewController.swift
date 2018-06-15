@@ -36,10 +36,21 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
         
         descriptionTextView.sizeToFit()
         descriptionTextView.isScrollEnabled = false
-
+        
+        var descriptionText: String = ""
+        let parser = Parser(articleLink: "", params: ["": ""])
+        parser.performRequest(link: "https://mercury.postlight.com/parser?url=https://trackchanges.postlight.com/building-awesome-cms-f034344d8ed") { result, error in
+            guard let result = result, error == nil else {
+                print(error)
+                return
+            }
+            print(result)
+            self.descriptionTextView.text = result
+            
+        }
+        
         titleTextView.text = pressedTitle!
         linkLabel.text = pressedLink!
-        descriptionTextView.text = pressedDescription!
         
     }
 
