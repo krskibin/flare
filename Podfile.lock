@@ -3,23 +3,26 @@ PODS:
   - AlamofireObjectMapper (5.0.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
-  - Kanna (4.0.0)
+  - Atributika (4.4.1)
   - ObjectMapper (3.1.0)
+  - SwiftDate (4.5.1)
   - SwiftLint (0.25.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (~> 5.0)
-  - Kanna (~> 4.0.0)
+  - Atributika
+  - SwiftDate (~> 4.5.0)
   - SwiftLint (~> 0.25.0)
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
-  Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
+  Atributika: 6c4d2a789a18ed64f2f5e7fe696da22973d8af0d
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: adc67e426fdd4af61946f2596149506f09da148e
+PODFILE CHECKSUM: b4e30b86ec9395dcf19e875eb61abfba4e7ec4b8
 
 COCOAPODS: 1.4.0

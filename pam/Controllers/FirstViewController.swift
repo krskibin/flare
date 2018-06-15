@@ -1,4 +1,5 @@
 import UIKit
+import SwiftDate
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var selectedTitle: String?
@@ -54,7 +55,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             article.headline = title
                             article.link = link
                             article.imageUrl = urlToImage
-                            article.pubDate = pubDate
+                            article.pubDate = estimateTime(dateToEstimate: pubDate)
                         }
                         if article.headline != nil {
                             self.articles?.append(article)
@@ -146,4 +147,18 @@ extension UIImageView {
         }
         task.resume()
     }
+}
+
+func estimateTime(dateToEstimate: String) -> String {
+    let poland = Region(tz: TimeZoneName.europeWarsaw, cal: CalendarName.gregorian, loc: LocaleName.polish)
+
+    var date  = dateToEstimate.replacingOccurrences(of: "T", with: " ")
+    date = date.replacingOccurrences(of: "Z", with: "")
+    let formattedDate = try! DateInRegion(string: "1999-12-31 23:30:00", format: .custom("yyyy-MM-dd HH:mm:ss"), fromRegion: poland)
+
+    
+    let dateC = DateInRegion() - 15.minute
+    let (colloquial,relevantTime) = try! dateC.colloquialSinceNow()
+    
+    return colloquial
 }

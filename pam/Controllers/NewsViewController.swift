@@ -1,5 +1,6 @@
 import UIKit
 import Alamofire
+import Atributika
 
 class NewsViewController: UIViewController, UIScrollViewDelegate {
     var pressedTitle: String?
@@ -36,17 +37,31 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
         
         descriptionTextView.sizeToFit()
         descriptionTextView.isScrollEnabled = false
-        
-        var descriptionText: String = ""
+
         let parser = Parser(articleLink: "", params: ["": ""])
-        parser.performRequest(link: "https://mercury.postlight.com/parser?url=https://trackchanges.postlight.com/building-awesome-cms-f034344d8ed") { result, error in
+        parser.performRequest(params: ["url": pressedLink!]) { result, error in
             guard let result = result, error == nil else {
-                print(error)
+                print(error ?? "")
                 return
             }
-            print(result)
-            self.descriptionTextView.text = result
             
+            // swiftlint:disable identifier_name
+            let links = Style.foregroundColor(.blue)
+            let phoneNumbers = Style.backgroundColor(.yellow)
+            let mentions = Style.font(.italicSystemFont(ofSize: 12)).foregroundColor(.black)
+            let b = Style("b").font(.boldSystemFont(ofSize: 12))
+            let u = Style("u").underlineStyle(.styleSingle)
+            let h1 = Style("h2").font(.boldSystemFont(ofSize: 22))
+            let all = Style.font(.systemFont(ofSize: 16)).foregroundColor(.black)
+
+            self.descriptionTextView.attributedText = result
+                .style(tags: u, b, h1)
+                .styleMentions(mentions)
+                .styleHashtags(links)
+                .styleLinks(links)
+                .stylePhoneNumbers(phoneNumbers)
+                .styleAll(all)
+                .attributedString
         }
         
         titleTextView.text = pressedTitle!
@@ -78,11 +93,12 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
         
         let someText: String = "Hello want to share text also"
         let objectsToShare: URL = URL(string: "http://www.google.com")!
-        let sharedObjects: [AnyObject] = [objectsToShare as AnyObject,someText as AnyObject]
+        let sharedObjects: [AnyObject] = [objectsToShare as AnyObject, someText as AnyObject]
         let activityViewController = UIActivityViewController(activityItems: sharedObjects, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         
-        //activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook,UIActivityType.postToTwitter,UIActivityType.mail]
+        // activityViewController.excludedActivityTypes = [ UIActivityType.airDrop,
+        // UIActivityType.postToFacebook,UIActivityType.postToTwitter,UIActivityType.mail]
         
         self.present(activityViewController, animated: true, completion: nil)
         

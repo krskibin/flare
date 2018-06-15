@@ -6,7 +6,6 @@ target 'pam' do
   use_frameworks!
 
   # Pods for pam
-  pod 'SwiftLint', '~> 0.25.0'
 
   target 'pamTests' do
     inherit! :search_paths
@@ -17,11 +16,12 @@ target 'pam' do
     inherit! :search_paths
     # Pods for testing
   end
-
-  pod 'Alamofire', '~> 4.7'
   
   use_frameworks!
-  pod 'Kanna', '~> 4.0.0'
+  pod 'Alamofire', '~> 4.7'
+  pod 'SwiftLint', '~> 0.25.0'
   pod 'AlamofireObjectMapper', '~> 5.0'
+  pod 'SwiftDate', '~> 4.5.0'
+  pod 'Atributika', '~> 4.4.1'
 
 end

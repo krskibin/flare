@@ -3,7 +3,6 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 
-
 class ParsedArticle: NSObject, Mappable {
     var content: String?
     
@@ -36,7 +35,10 @@ class Parser {
         self.params = params
     }
     
-    func performRequest(link: String, completionHandler: @escaping (String?, Error?) -> Void) {
+    func performRequest(params: [String: String], completionHandler: @escaping (String?, Error?) -> Void) {
+        var link = "https://mercury.postlight.com/parser?url="
+        link += params["url"]!
+        
         if let link = URL(string: link) {
             var urlRequest = URLRequest(url: link)
             urlRequest.httpMethod = HTTPMethod.get.rawValue
@@ -50,14 +52,14 @@ class Parser {
             headers["x-api-key"] = "1tFApQFYCIGZdsNjFITEDf6xBeFBU5vjXf03KuKY"
             urlRequest.allHTTPHeaderFields = headers
             
-            let request = Alamofire.request(urlRequest).responseObject { (response: DataResponse<ParsedArticle>) in
+            let _ = Alamofire.request(urlRequest).responseObject { (response: DataResponse<ParsedArticle>) in
                 switch response.result {
-                    case .failure(let error):
-                        completionHandler(nil, error)
-                    case .success(let responseObject):
-                        let result = responseObject.content
-                        print(responseObject)
-                        completionHandler(result, nil)
+                case .failure(let error):
+                    completionHandler(nil, error)
+                case .success(let responseObject):
+                    let result = responseObject.content
+                    print(responseObject)
+                    completionHandler(result, nil)
                 }
             }
         }
