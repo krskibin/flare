@@ -21,7 +21,7 @@ target 'pam' do
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftLint', '~> 0.25.0'
   pod 'AlamofireObjectMapper', '~> 5.0'
-  pod 'SwiftDate', '~> 4.5.0'
   pod 'Atributika', '~> 4.4.1'
+
 
 end
