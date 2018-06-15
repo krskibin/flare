@@ -23,6 +23,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         fetchArticles()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        fetchArticles()
+    }
+    
     func fetchArticles() {
         var sourcesString = ""
         var sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]

@@ -16,6 +16,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         sourcesTableView.delegate = self
         sourcesTableView.dataSource = self
     }
+    override func viewDidAppear(_ animated: Bool) {
+        sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
+        sourcesTableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
