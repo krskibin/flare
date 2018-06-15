@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double AFDateHelperVersionNumber;
-FOUNDATION_EXPORT const unsigned char AFDateHelperVersionString[];
+FOUNDATION_EXPORT double FavIconVersionNumber;
+FOUNDATION_EXPORT const unsigned char FavIconVersionString[];
 

@@ -22,6 +22,6 @@ target 'pam' do
   pod 'SwiftLint', '~> 0.25.0'
   pod 'AlamofireObjectMapper', '~> 5.0'
   pod 'Atributika', '~> 4.4.1'
-
+  pod 'FavIcon', '~> 3.0.0'
 
 end

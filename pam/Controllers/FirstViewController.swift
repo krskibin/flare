@@ -1,5 +1,5 @@
 import UIKit
-import AFDateHelper
+import FavIcon
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var selectedTitle: String?
@@ -108,6 +108,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.dateLabel.text = articles?[indexPath.item].pubDate
         cell.newsImage.layer.cornerRadius = 8
         cell.newsLabel.numberOfLines = 0
+        
+        do {
+            try FavIcon.downloadPreferred((articles?[indexPath.item].link)!) { result in
+            if case let .success(image) = result {
+                cell.faviconImage.image = image
+            }
+        }
+        } catch {
+            print("error")
+        }
         
         if let imageUrl = self.articles?[indexPath.item].imageUrl {
             cell.newsImage.downloadImage(from: (imageUrl))
