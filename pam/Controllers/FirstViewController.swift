@@ -20,6 +20,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         newsTableView.delegate = self
         newsTableView.dataSource = self
         
+        if newsTableView.visibleCells.isEmpty {
+            print("B Ł Ą D")
+            showAlert()
+        }
+        
         fetchArticles()
     }
     
@@ -84,6 +89,24 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         task.resume()
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "An error has occurred", message: "Check your sources", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        self.present(alert, animated: true, completion: nil)
     }
     
     /*func convertTime() -> String {
