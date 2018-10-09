@@ -56,7 +56,8 @@ func detectHTMLHeadIcons(_ document: HTMLDocument, baseURL: URL) -> [Icon] {
             } else {
                 icons.append(Icon(url: url.absoluteURL, type: .classic))
             }
-        case "apple-touch-icon":
+        case "apple-touch-icon",
+             "apple-touch-icon-precomposed":
             let sizes = parseHTMLIconSizes(link.attributes["sizes"])
             if sizes.count > 0 {
                 for size in sizes {
@@ -99,7 +100,7 @@ func detectWebAppManifestIcons(_ json: String, baseURL: URL) -> [Icon] {
     var icons: [Icon] = []
 
     guard let data = json.data(using: .utf8) else { return icons }
-    guard let object = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions()) else {
+    guard let object = try? JSONSerialization.jsonObject(with: data, options: []) else {
         return icons
     }
     guard let manifest = object as? [String: Any] else { return icons }
