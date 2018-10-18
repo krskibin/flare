@@ -440,10 +440,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hgj-gI-4mR">
-                                <rect key="frame" x="89" y="164" width="236" height="236"/>
+                                <rect key="frame" x="0.0" y="164" width="374" height="236"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="236" id="8tP-Az-EPJ"/>
-                                    <constraint firstAttribute="width" constant="236" id="pLf-mM-QQz"/>
+                                    <constraint firstAttribute="height" constant="236" id="rEw-sw-eir"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="brv-5R-So2" kind="embed" id="6LI-wL-Qxi"/>
@@ -453,10 +452,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Hgj-gI-4mR" firstAttribute="top" secondItem="cvD-vL-qhp" secondAttribute="bottom" constant="20" id="3Nl-RU-yyO"/>
+                            <constraint firstItem="Hgj-gI-4mR" firstAttribute="leading" secondItem="D9r-tK-RpP" secondAttribute="leading" id="4W7-ca-6ya"/>
                             <constraint firstItem="gwg-et-5O1" firstAttribute="top" secondItem="ZFz-Ab-6U3" secondAttribute="bottom" constant="25" id="CMn-qx-dc1"/>
                             <constraint firstItem="gwg-et-5O1" firstAttribute="centerX" secondItem="SCH-ct-DsI" secondAttribute="centerX" id="DFY-gW-FlO"/>
                             <constraint firstItem="D9r-tK-RpP" firstAttribute="bottom" secondItem="gwg-et-5O1" secondAttribute="bottom" constant="40" id="DM5-DD-IRR"/>
-                            <constraint firstItem="Hgj-gI-4mR" firstAttribute="centerX" secondItem="SCH-ct-DsI" secondAttribute="centerX" id="FEC-lT-iaS"/>
+                            <constraint firstItem="D9r-tK-RpP" firstAttribute="trailing" secondItem="Hgj-gI-4mR" secondAttribute="trailing" constant="40" id="GQn-fi-ayh"/>
                             <constraint firstItem="D9r-tK-RpP" firstAttribute="trailing" secondItem="nzT-VV-7iI" secondAttribute="trailing" constant="16" id="Hyl-xl-fBI"/>
                             <constraint firstItem="nzT-VV-7iI" firstAttribute="leading" secondItem="D9r-tK-RpP" secondAttribute="leading" constant="16" id="O5J-Td-Xw1"/>
                             <constraint firstItem="hqv-bb-MG3" firstAttribute="centerX" secondItem="SCH-ct-DsI" secondAttribute="centerX" id="XMa-o7-xyQ"/>
@@ -595,7 +595,7 @@
             <objects>
                 <viewController id="brv-5R-So2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X1z-yt-fwM">
-                        <rect key="frame" x="0.0" y="0.0" width="236" height="236"/>
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="236"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>

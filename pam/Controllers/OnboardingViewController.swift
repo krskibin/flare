@@ -41,6 +41,8 @@ class OnboardingViewController: UIViewController {
         let animationView = LOTAnimationView(name: "lottie")
         animationView.frame = self.lottieView.frame
         animationView.contentMode = .scaleAspectFit
+        animationView.autoReverseAnimation = true
+        animationView.loopAnimation = true
         self.view.addSubview(animationView)
         animationView.play()
     }

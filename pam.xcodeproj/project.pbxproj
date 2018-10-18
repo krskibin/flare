@@ -34,7 +34,6 @@
 		B85B070A2178E68C00A0EF93 /* Pods_pamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B07092178E68C00A0EF93 /* Pods_pamUITests.framework */; };
 		B85B07102178F03300A0EF93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85B070F2178F03300A0EF93 /* Constants.swift */; };
 		B85B07122178F4AB00A0EF93 /* RoundShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85B07112178F4AB00A0EF93 /* RoundShadowButton.swift */; };
-		B85B07142178FC4D00A0EF93 /* lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = B85B07132178FC4D00A0EF93 /* lottie.json */; };
 		B88FEBC420D3B2B40035608F /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88FEBC320D3B2B40035608F /* CustomScrollView.swift */; };
 		B8DAD8CD20C9C5E400D2B7CF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */; };
 		B8DAD8CF20C9C80B00D2B7CF /* OnboardingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAD8CE20C9C80B00D2B7CF /* OnboardingTableViewController.swift */; };
@@ -42,6 +41,7 @@
 		B8E4E1E02057D28A00E216C9 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E4E1DF2057D28A00E216C9 /* NewsTableViewCell.swift */; };
 		B8EAD7D82097575100A55F47 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EAD7D72097575100A55F47 /* NewsViewController.swift */; };
 		B8F59529209F511A00A42633 /* NewSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F59528209F511900A42633 /* NewSourceViewController.swift */; };
+		B8F5F0D421791E3200D4D7AF /* lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = B8F5F0D321791E3100D4D7AF /* lottie.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +103,6 @@
 		B85B07092178E68C00A0EF93 /* Pods_pamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_pamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85B070F2178F03300A0EF93 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B85B07112178F4AB00A0EF93 /* RoundShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundShadowButton.swift; sourceTree = "<group>"; };
-		B85B07132178FC4D00A0EF93 /* lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottie.json; sourceTree = "<group>"; };
 		B88FEBC320D3B2B40035608F /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = pam/Controllers/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		B8DAD8CE20C9C80B00D2B7CF /* OnboardingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTableViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		B8E4E1DF2057D28A00E216C9 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		B8EAD7D72097575100A55F47 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		B8F59528209F511900A42633 /* NewSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSourceViewController.swift; sourceTree = "<group>"; };
+		B8F5F0D321791E3100D4D7AF /* lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottie.json; sourceTree = "<group>"; };
 		C5CE8D2AF3DB6CF966903FA0 /* Pods-pamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pamTests/Pods-pamTests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4A565F42BACA4721A92A22 /* Pods-pamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pamUITests/Pods-pamUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F96D6E73AF8B62AC91C617F1 /* Pods_pamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,7 +193,7 @@
 		0838AFB42095FC3B00A6D33E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B85B07132178FC4D00A0EF93 /* lottie.json */,
+				B8F5F0D321791E3100D4D7AF /* lottie.json */,
 				B85B070F2178F03300A0EF93 /* Constants.swift */,
 				B85B07112178F4AB00A0EF93 /* RoundShadowButton.swift */,
 				083D22632049FC3800977895 /* Info.plist */,
@@ -402,7 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B85B07142178FC4D00A0EF93 /* lottie.json in Resources */,
+				B8F5F0D421791E3200D4D7AF /* lottie.json in Resources */,
 				08541641204C271E00BC3EF1 /* .swiftlint.yml in Resources */,
 				083D22622049FC3800977895 /* LaunchScreen.storyboard in Resources */,
 				0847C41F2052BF9C00D99E99 /* docs in Resources */,
