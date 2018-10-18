@@ -24,6 +24,17 @@
 		83B8D9245B9C4C61D8C50AAE /* Pods_pamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C1A7D1F214AD999BE47C80 /* Pods_pamTests.framework */; };
 		B8236ABD20572B8D0023D9E1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8236ABC20572B8D0023D9E1 /* SettingsViewController.swift */; };
 		B84844BC209B7CC70088C845 /* SourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84844BB209B7CC70088C845 /* SourceTableViewCell.swift */; };
+		B85B06FC2178E68C00A0EF93 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B06FB2178E68C00A0EF93 /* Alamofire.framework */; };
+		B85B06FE2178E68C00A0EF93 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B06FD2178E68C00A0EF93 /* AlamofireObjectMapper.framework */; };
+		B85B07002178E68C00A0EF93 /* Atributika.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B06FF2178E68C00A0EF93 /* Atributika.framework */; };
+		B85B07022178E68C00A0EF93 /* FavIcon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B07012178E68C00A0EF93 /* FavIcon.framework */; };
+		B85B07042178E68C00A0EF93 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B07032178E68C00A0EF93 /* Lottie.framework */; };
+		B85B07062178E68C00A0EF93 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B07052178E68C00A0EF93 /* ObjectMapper.framework */; };
+		B85B07082178E68C00A0EF93 /* Pods_pamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B07072178E68C00A0EF93 /* Pods_pamTests.framework */; };
+		B85B070A2178E68C00A0EF93 /* Pods_pamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B07092178E68C00A0EF93 /* Pods_pamUITests.framework */; };
+		B85B07102178F03300A0EF93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85B070F2178F03300A0EF93 /* Constants.swift */; };
+		B85B07122178F4AB00A0EF93 /* RoundShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85B07112178F4AB00A0EF93 /* RoundShadowButton.swift */; };
+		B85B07142178FC4D00A0EF93 /* lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = B85B07132178FC4D00A0EF93 /* lottie.json */; };
 		B88FEBC420D3B2B40035608F /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88FEBC320D3B2B40035608F /* CustomScrollView.swift */; };
 		B8DAD8CD20C9C5E400D2B7CF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */; };
 		B8DAD8CF20C9C80B00D2B7CF /* OnboardingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAD8CE20C9C80B00D2B7CF /* OnboardingTableViewController.swift */; };
@@ -82,6 +93,17 @@
 		B2DE4F8B1B45C698CAAFE40C /* Pods-pamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pamTests/Pods-pamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8236ABC20572B8D0023D9E1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B84844BB209B7CC70088C845 /* SourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SourceTableViewCell.swift; path = pam/Controllers/SourceTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		B85B06FB2178E68C00A0EF93 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B85B06FD2178E68C00A0EF93 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B85B06FF2178E68C00A0EF93 /* Atributika.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Atributika.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B85B07012178E68C00A0EF93 /* FavIcon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FavIcon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B85B07032178E68C00A0EF93 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B85B07052178E68C00A0EF93 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B85B07072178E68C00A0EF93 /* Pods_pamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_pamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B85B07092178E68C00A0EF93 /* Pods_pamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_pamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B85B070F2178F03300A0EF93 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B85B07112178F4AB00A0EF93 /* RoundShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundShadowButton.swift; sourceTree = "<group>"; };
+		B85B07132178FC4D00A0EF93 /* lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottie.json; sourceTree = "<group>"; };
 		B88FEBC320D3B2B40035608F /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = pam/Controllers/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		B8DAD8CE20C9C80B00D2B7CF /* OnboardingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTableViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +121,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B85B06FC2178E68C00A0EF93 /* Alamofire.framework in Frameworks */,
+				B85B06FE2178E68C00A0EF93 /* AlamofireObjectMapper.framework in Frameworks */,
+				B85B07002178E68C00A0EF93 /* Atributika.framework in Frameworks */,
+				B85B07022178E68C00A0EF93 /* FavIcon.framework in Frameworks */,
+				B85B07042178E68C00A0EF93 /* Lottie.framework in Frameworks */,
+				B85B07062178E68C00A0EF93 /* ObjectMapper.framework in Frameworks */,
+				B85B07082178E68C00A0EF93 /* Pods_pamTests.framework in Frameworks */,
+				B85B070A2178E68C00A0EF93 /* Pods_pamUITests.framework in Frameworks */,
 				483AB3B0A3106F9DE24D6E00 /* Pods_pam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +193,9 @@
 		0838AFB42095FC3B00A6D33E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B85B07132178FC4D00A0EF93 /* lottie.json */,
+				B85B070F2178F03300A0EF93 /* Constants.swift */,
+				B85B07112178F4AB00A0EF93 /* RoundShadowButton.swift */,
 				083D22632049FC3800977895 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -229,6 +262,14 @@
 		695D3C392AB5477CD123F21E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B85B06FB2178E68C00A0EF93 /* Alamofire.framework */,
+				B85B06FD2178E68C00A0EF93 /* AlamofireObjectMapper.framework */,
+				B85B06FF2178E68C00A0EF93 /* Atributika.framework */,
+				B85B07012178E68C00A0EF93 /* FavIcon.framework */,
+				B85B07032178E68C00A0EF93 /* Lottie.framework */,
+				B85B07052178E68C00A0EF93 /* ObjectMapper.framework */,
+				B85B07072178E68C00A0EF93 /* Pods_pamTests.framework */,
+				B85B07092178E68C00A0EF93 /* Pods_pamUITests.framework */,
 				B26DC8980D62AD5432B789CF /* Pods_pam.framework */,
 				21C1A7D1F214AD999BE47C80 /* Pods_pamTests.framework */,
 				F96D6E73AF8B62AC91C617F1 /* Pods_pamUITests.framework */,
@@ -361,6 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B85B07142178FC4D00A0EF93 /* lottie.json in Resources */,
 				08541641204C271E00BC3EF1 /* .swiftlint.yml in Resources */,
 				083D22622049FC3800977895 /* LaunchScreen.storyboard in Resources */,
 				0847C41F2052BF9C00D99E99 /* docs in Resources */,
@@ -429,6 +471,7 @@
 				"${BUILT_PRODUCTS_DIR}/Atributika/Atributika.framework",
 				"${BUILT_PRODUCTS_DIR}/FavIcon/FavIcon.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -437,6 +480,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Atributika.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FavIcon.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -498,6 +542,8 @@
 				B8EAD7D82097575100A55F47 /* NewsViewController.swift in Sources */,
 				B8DAD8CD20C9C5E400D2B7CF /* OnboardingViewController.swift in Sources */,
 				083D22582049FC3800977895 /* FirstViewController.swift in Sources */,
+				B85B07122178F4AB00A0EF93 /* RoundShadowButton.swift in Sources */,
+				B85B07102178F03300A0EF93 /* Constants.swift in Sources */,
 				B8DAD8D120C9CA1D00D2B7CF /* OnboardingTableViewCell.swift in Sources */,
 				B8236ABD20572B8D0023D9E1 /* SettingsViewController.swift in Sources */,
 			);
@@ -671,10 +717,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HZ4WC7NY4S;
+				DEVELOPMENT_TEAM = V9858W9DAL;
 				INFOPLIST_FILE = "$(SRCROOT)/pam/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.krskibin.pampampam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krskibin.pam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -687,10 +733,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HZ4WC7NY4S;
+				DEVELOPMENT_TEAM = V9858W9DAL;
 				INFOPLIST_FILE = "$(SRCROOT)/pam/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.krskibin.pampampam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krskibin.pam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

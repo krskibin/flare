@@ -23,5 +23,6 @@ target 'pam' do
   pod 'AlamofireObjectMapper', '~> 5.0'
   pod 'Atributika', '~> 4.4.1'
   pod 'FavIcon', '~> 3.0.0'
+  pod 'lottie-ios'
 
 end
