@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0588A439E5DB888F1F5D3398 /* Pods_pamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B07072178E68C00A0EF93 /* Pods_pamTests.framework */; };
 		083D22562049FC3800977895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D22552049FC3800977895 /* AppDelegate.swift */; };
 		083D22582049FC3800977895 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D22572049FC3800977895 /* FirstViewController.swift */; };
 		083D225A2049FC3800977895 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D22592049FC3800977895 /* SecondViewController.swift */; };
@@ -42,6 +43,7 @@
 		B8EAD7D82097575100A55F47 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EAD7D72097575100A55F47 /* NewsViewController.swift */; };
 		B8F59529209F511A00A42633 /* NewSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F59528209F511900A42633 /* NewSourceViewController.swift */; };
 		B8F5F0D421791E3200D4D7AF /* lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = B8F5F0D321791E3100D4D7AF /* lottie.json */; };
+		E100309CA84FE00BF8E6972C /* Pods_pamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B07092178E68C00A0EF93 /* Pods_pamUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83B8D9245B9C4C61D8C50AAE /* Pods_pamTests.framework in Frameworks */,
+				0588A439E5DB888F1F5D3398 /* Pods_pamTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				157705F0BE014B8C9E341295 /* Pods_pamUITests.framework in Frameworks */,
+				E100309CA84FE00BF8E6972C /* Pods_pamUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

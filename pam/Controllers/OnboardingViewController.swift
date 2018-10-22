@@ -15,6 +15,9 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var lottieView: UIView!
+    @IBOutlet weak var lottieLogoCN: NSLayoutConstraint!
+    @IBOutlet weak var lottieHeightCN: NSLayoutConstraint!
+    @IBOutlet weak var lottieWidthCN: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,11 @@ class OnboardingViewController: UIViewController {
             case 1136:
                 print("retarded iPhone 4-inch")
                 welcomeLabel.isHidden = false
+                lottieLogoCN.constant = 10
+                lottieHeightCN.constant = 190
+                lottieWidthCN.constant = 190
+                descriptionText.font = UIFont(name: (descriptionText.font?.fontName)!, size: 15)
+                self.view.layoutIfNeeded()
 
             default:
                 welcomeLabel.isHidden = true
@@ -37,12 +45,13 @@ class OnboardingViewController: UIViewController {
         continueButton.layer.cornerRadius = continueButton.frame.height / 2
         continueButton.layer.masksToBounds = true
         continueButton.setGradient(first: Colors.myRed, second: Colors.myLightRed)
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         let animationView = LOTAnimationView(name: "lottie")
-        animationView.frame = self.lottieView.frame
-        animationView.contentMode = .scaleAspectFit
         animationView.autoReverseAnimation = true
         animationView.loopAnimation = true
+        animationView.frame = self.lottieView.frame
         self.view.addSubview(animationView)
         animationView.play()
     }
