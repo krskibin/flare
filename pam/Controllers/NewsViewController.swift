@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import Atributika
+import JGProgressHUD
 
 class NewsViewController: UIViewController, UIScrollViewDelegate {
     var pressedTitle: String?
@@ -15,10 +16,14 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    let myHud = JGProgressHUD(style: .light)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.scrollsToTop = false
         self.navigationController?.navigationBar.isTranslucent = true
+        self.myHud.textLabel.text = "Loading"
+        self.myHud.show(in: self.view)
         
         if pressedImage != "" {
             let imageUrl = URL(string: pressedImage!)
@@ -63,6 +68,8 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
                 .stylePhoneNumbers(phoneNumbers)
                 .styleAll(all)
                 .attributedString
+            
+            self.myHud.dismiss()
         }
         
         titleTextView.text = pressedTitle!

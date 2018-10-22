@@ -591,34 +591,6 @@
             </objects>
             <point key="canvasLocation" x="-645" y="-321"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="cBf-0c-Jhz">
-            <objects>
-                <viewController id="brv-5R-So2" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="X1z-yt-fwM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Yel-Va-it7"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HTr-44-AIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="5rX-Fw-XUh">
-            <objects>
-                <viewController id="qKx-bd-mke" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zg6-Y3-kX3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="U4G-P1-2ko"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dnl-h0-MFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="FeedIcon" width="24" height="24"/>

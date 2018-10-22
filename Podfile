@@ -24,5 +24,6 @@ target 'pam' do
   pod 'Atributika', '~> 4.4.1'
   pod 'FavIcon', '~> 3.0.0'
   pod 'lottie-ios'
+  pod 'JGProgressHUD'
 
 end

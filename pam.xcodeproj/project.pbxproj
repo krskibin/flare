@@ -41,6 +41,7 @@
 		B8DAD8D120C9CA1D00D2B7CF /* OnboardingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAD8D020C9CA1D00D2B7CF /* OnboardingTableViewCell.swift */; };
 		B8E4E1E02057D28A00E216C9 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E4E1DF2057D28A00E216C9 /* NewsTableViewCell.swift */; };
 		B8EAD7D82097575100A55F47 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EAD7D72097575100A55F47 /* NewsViewController.swift */; };
+		B8F4FB86217E75FD009D95F5 /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F4FB85217E75FD009D95F5 /* JGProgressHUD.framework */; };
 		B8F59529209F511A00A42633 /* NewSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F59528209F511900A42633 /* NewSourceViewController.swift */; };
 		B8F5F0D421791E3200D4D7AF /* lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = B8F5F0D321791E3100D4D7AF /* lottie.json */; };
 		E100309CA84FE00BF8E6972C /* Pods_pamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B07092178E68C00A0EF93 /* Pods_pamUITests.framework */; };
@@ -111,6 +112,7 @@
 		B8DAD8D020C9CA1D00D2B7CF /* OnboardingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTableViewCell.swift; sourceTree = "<group>"; };
 		B8E4E1DF2057D28A00E216C9 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		B8EAD7D72097575100A55F47 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		B8F4FB85217E75FD009D95F5 /* JGProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JGProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F59528209F511900A42633 /* NewSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSourceViewController.swift; sourceTree = "<group>"; };
 		B8F5F0D321791E3100D4D7AF /* lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottie.json; sourceTree = "<group>"; };
 		C5CE8D2AF3DB6CF966903FA0 /* Pods-pamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pamTests/Pods-pamTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F4FB86217E75FD009D95F5 /* JGProgressHUD.framework in Frameworks */,
 				B85B06FC2178E68C00A0EF93 /* Alamofire.framework in Frameworks */,
 				B85B06FE2178E68C00A0EF93 /* AlamofireObjectMapper.framework in Frameworks */,
 				B85B07002178E68C00A0EF93 /* Atributika.framework in Frameworks */,
@@ -266,6 +269,7 @@
 		695D3C392AB5477CD123F21E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B8F4FB85217E75FD009D95F5 /* JGProgressHUD.framework */,
 				B85B06FB2178E68C00A0EF93 /* Alamofire.framework */,
 				B85B06FD2178E68C00A0EF93 /* AlamofireObjectMapper.framework */,
 				B85B06FF2178E68C00A0EF93 /* Atributika.framework */,
@@ -474,6 +478,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Atributika/Atributika.framework",
 				"${BUILT_PRODUCTS_DIR}/FavIcon/FavIcon.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
@@ -483,6 +488,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Atributika.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FavIcon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
