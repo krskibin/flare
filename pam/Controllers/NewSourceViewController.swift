@@ -10,8 +10,6 @@ import UIKit
 class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let categories = ["General", "Mobile", "Programming", "Video Games"]
-    
-    @objc var pickerView = UIPickerView()
     var sources: [String] = []
 
     @IBOutlet weak var categoryInput: UITextField!
@@ -21,17 +19,49 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         super.viewDidLoad()
         sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
         
-        categoryInput.inputView = pickerView
-        pickerView.delegate = self
-        pickerView.dataSource = self
+        navigationController?.navigationBar.backgroundColor = .clear
+        navigationController?.navigationBar.isTranslucent = true
         
-        categoryInput.setBottomBorder()
-        websiteInput.setBottomBorder()
+        initPickerView()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initPickerView() {
+        let picker: UIPickerView
+        picker = UIPickerView(frame: CGRect(x: 0, y: 200, width: view.frame.width, height: 300))
+        picker.backgroundColor = .white
+        
+        picker.showsSelectionIndicator = true
+        picker.delegate = self
+        picker.dataSource = self
+        
+        let toolbar = UIToolbar()
+        toolbar.barStyle = UIBarStyle.default
+        toolbar.isTranslucent = true
+        toolbar.tintColor = UIColor(red: 255/255, green: 69/255, blue: 82/255, alpha: 1)
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: "donePicker")
+        let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cance;", style: UIBarButtonItemStyle.plain, target: self, action: "cancelPicker")
+        
+        toolbar.setItems([cancelButton, space, doneButton], animated: false)
+        toolbar.isUserInteractionEnabled = true
+        
+        categoryInput.inputView = picker
+        categoryInput.inputAccessoryView = toolbar
+    }
+    
+    @objc func donePicker() {
+        categoryInput.resignFirstResponder()
+    }
+    
+    @objc func cancelPicker() {
+        categoryInput.resignFirstResponder()
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -64,19 +94,5 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow curRow: Int, inComponent component: Int) {
         categoryInput.text = categories[curRow]
-        categoryInput.resignFirstResponder()
-    }
-}
-
-extension UITextField {
-    func setBottomBorder() {
-        self.borderStyle = .none
-        self.layer.backgroundColor = UIColor.white.cgColor
-        
-        self.layer.masksToBounds = false
-        self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
-        self.layer.shadowOpacity = 1.0
-        self.layer.shadowRadius = 0.0
     }
 }

@@ -10,7 +10,6 @@
 		0588A439E5DB888F1F5D3398 /* Pods_pamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B07072178E68C00A0EF93 /* Pods_pamTests.framework */; };
 		083D22562049FC3800977895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D22552049FC3800977895 /* AppDelegate.swift */; };
 		083D22582049FC3800977895 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D22572049FC3800977895 /* FirstViewController.swift */; };
-		083D225A2049FC3800977895 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D22592049FC3800977895 /* SecondViewController.swift */; };
 		083D225D2049FC3800977895 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 083D225B2049FC3800977895 /* Main.storyboard */; };
 		083D225F2049FC3800977895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 083D225E2049FC3800977895 /* Assets.xcassets */; };
 		083D22622049FC3800977895 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 083D22602049FC3800977895 /* LaunchScreen.storyboard */; };
@@ -69,7 +68,6 @@
 		083D22522049FC3800977895 /* pam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		083D22552049FC3800977895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		083D22572049FC3800977895 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		083D22592049FC3800977895 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		083D225C2049FC3800977895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		083D225E2049FC3800977895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		083D22612049FC3800977895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,7 +105,7 @@
 		B85B070F2178F03300A0EF93 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B85B07112178F4AB00A0EF93 /* RoundShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundShadowButton.swift; sourceTree = "<group>"; };
 		B88FEBC320D3B2B40035608F /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
-		B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = pam/Controllers/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
+		B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = pam/Controllers/Onboarding/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		B8DAD8CE20C9C80B00D2B7CF /* OnboardingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTableViewController.swift; sourceTree = "<group>"; };
 		B8DAD8D020C9CA1D00D2B7CF /* OnboardingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTableViewCell.swift; sourceTree = "<group>"; };
 		B8E4E1DF2057D28A00E216C9 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -163,16 +161,13 @@
 			isa = PBXGroup;
 			children = (
 				083D22572049FC3800977895 /* FirstViewController.swift */,
-				B88FEBC320D3B2B40035608F /* CustomScrollView.swift */,
-				083D22592049FC3800977895 /* SecondViewController.swift */,
 				B8EAD7D72097575100A55F47 /* NewsViewController.swift */,
+				B88FEBC320D3B2B40035608F /* CustomScrollView.swift */,
 				B8E4E1DF2057D28A00E216C9 /* NewsTableViewCell.swift */,
 				B8236ABC20572B8D0023D9E1 /* SettingsViewController.swift */,
 				B84844BB209B7CC70088C845 /* SourceTableViewCell.swift */,
 				B8F59528209F511900A42633 /* NewSourceViewController.swift */,
-				B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */,
-				B8DAD8CE20C9C80B00D2B7CF /* OnboardingTableViewController.swift */,
-				B8DAD8D020C9CA1D00D2B7CF /* OnboardingTableViewCell.swift */,
+				B80A4AD5218E3F4800FFFC86 /* Onboarding */,
 				083D22552049FC3800977895 /* AppDelegate.swift */,
 			);
 			path = Controllers;
@@ -296,6 +291,16 @@
 				CE4A565F42BACA4721A92A22 /* Pods-pamUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B80A4AD5218E3F4800FFFC86 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B8DAD8CE20C9C80B00D2B7CF /* OnboardingTableViewController.swift */,
+				B8DAD8D020C9CA1D00D2B7CF /* OnboardingTableViewCell.swift */,
+				B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -543,7 +548,6 @@
 				B84844BC209B7CC70088C845 /* SourceTableViewCell.swift in Sources */,
 				B8DAD8CF20C9C80B00D2B7CF /* OnboardingTableViewController.swift in Sources */,
 				B88FEBC420D3B2B40035608F /* CustomScrollView.swift in Sources */,
-				083D225A2049FC3800977895 /* SecondViewController.swift in Sources */,
 				087A393E20D2EC40005C956F /* Parser.swift in Sources */,
 				089D68C820C9AC5600FC9772 /* Article.swift in Sources */,
 				B8F59529209F511A00A42633 /* NewSourceViewController.swift in Sources */,

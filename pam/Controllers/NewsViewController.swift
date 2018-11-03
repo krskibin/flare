@@ -7,7 +7,6 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
     var pressedTitle: String?
     var pressedLink: String?
     var pressedImage: String?
-    var pressedDescription: String?
     
     @IBOutlet weak var descriptionLabel: UITextView!
     @IBOutlet weak var linkLabel: UILabel!
@@ -21,14 +20,14 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.scrollsToTop = false
-        self.navigationController?.navigationBar.isTranslucent = true
+        //self.navigationController?.navigationBar.isTranslucent = true
         self.myHud.textLabel.text = "Loading"
         self.myHud.show(in: self.view)
         
         if pressedImage != "" {
             let imageUrl = URL(string: pressedImage!)
             let data = try? Data(contentsOf: imageUrl!)
-        
+            print("POBIERAM DO NOWA")
             topImage.image = UIImage(data: data!)
         }
         
@@ -105,7 +104,5 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
         activityViewController.popoverPresentationController?.sourceView = self.view
         
         self.present(activityViewController, animated: true, completion: nil)
-        
     }
-    
 }

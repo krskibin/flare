@@ -3,12 +3,10 @@ import FavIcon
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var selectedTitle: String?
-    private var selectedDescription: String?
     private var selectedLink: String?
     private var selectedImage: String?
     
     var articles: [Article]? = []
-    
     
     @IBOutlet weak var newsTableView: UITableView!
     
@@ -24,7 +22,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             print("B Ł Ą D")
             showAlert()
         }
-        
+        navigationController?.navigationBar.isTranslucent = true
         fetchArticles()
     }
     
@@ -160,7 +158,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         selectedTitle = articles?[indexPath.row].headline ?? ""
         selectedLink = articles?[indexPath.row].link ?? ""
-        selectedDescription = articles?[indexPath.row].desc ?? ""
         selectedImage = articles?[indexPath.row].imageUrl ?? ""
         
         tableView.deselectRow(at: indexPath, animated: true)
@@ -171,7 +168,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if segue.identifier == "goToNewsDetail" {
             if let destinationVC = segue.destination as? NewsViewController {
                 destinationVC.pressedTitle = selectedTitle ?? "Couldn\'t load"
-                destinationVC.pressedDescription = selectedDescription ?? "Couldn\'t load"
                 destinationVC.pressedLink = selectedLink ?? "Coudn\'t load"
                 destinationVC.pressedImage = selectedImage ?? ""
             }

@@ -15,6 +15,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         versionViewLabel.text = "version: \(versionNumber)"
         sourcesTableView.delegate = self
         sourcesTableView.dataSource = self
+        sourcesTableView.tableFooterView = UIView()
     }
     override func viewDidAppear(_ animated: Bool) {
         sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
