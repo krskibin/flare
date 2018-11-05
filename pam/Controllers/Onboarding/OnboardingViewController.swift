@@ -49,8 +49,6 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let animationView = LOTAnimationView(name: "lottie")
-        animationView.autoReverseAnimation = true
-        animationView.loopAnimation = true
         animationView.frame = self.lottieView.frame
         self.view.addSubview(animationView)
         animationView.play()

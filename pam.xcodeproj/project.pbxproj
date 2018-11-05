@@ -23,6 +23,7 @@
 		483AB3B0A3106F9DE24D6E00 /* Pods_pam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26DC8980D62AD5432B789CF /* Pods_pam.framework */; };
 		83B8D9245B9C4C61D8C50AAE /* Pods_pamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C1A7D1F214AD999BE47C80 /* Pods_pamTests.framework */; };
 		B8236ABD20572B8D0023D9E1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8236ABC20572B8D0023D9E1 /* SettingsViewController.swift */; };
+		B8457E682190C41A00AB8722 /* lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = B8457E672190C41A00AB8722 /* lottie.json */; };
 		B84844BC209B7CC70088C845 /* SourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84844BB209B7CC70088C845 /* SourceTableViewCell.swift */; };
 		B85B06FC2178E68C00A0EF93 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B06FB2178E68C00A0EF93 /* Alamofire.framework */; };
 		B85B06FE2178E68C00A0EF93 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B06FD2178E68C00A0EF93 /* AlamofireObjectMapper.framework */; };
@@ -42,7 +43,6 @@
 		B8EAD7D82097575100A55F47 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EAD7D72097575100A55F47 /* NewsViewController.swift */; };
 		B8F4FB86217E75FD009D95F5 /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F4FB85217E75FD009D95F5 /* JGProgressHUD.framework */; };
 		B8F59529209F511A00A42633 /* NewSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F59528209F511900A42633 /* NewSourceViewController.swift */; };
-		B8F5F0D421791E3200D4D7AF /* lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = B8F5F0D321791E3100D4D7AF /* lottie.json */; };
 		E100309CA84FE00BF8E6972C /* Pods_pamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B07092178E68C00A0EF93 /* Pods_pamUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +93,7 @@
 		B26DC8980D62AD5432B789CF /* Pods_pam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2DE4F8B1B45C698CAAFE40C /* Pods-pamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pamTests/Pods-pamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8236ABC20572B8D0023D9E1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B8457E672190C41A00AB8722 /* lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottie.json; sourceTree = "<group>"; };
 		B84844BB209B7CC70088C845 /* SourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SourceTableViewCell.swift; path = pam/Controllers/SourceTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B85B06FB2178E68C00A0EF93 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85B06FD2178E68C00A0EF93 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +113,6 @@
 		B8EAD7D72097575100A55F47 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		B8F4FB85217E75FD009D95F5 /* JGProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JGProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F59528209F511900A42633 /* NewSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSourceViewController.swift; sourceTree = "<group>"; };
-		B8F5F0D321791E3100D4D7AF /* lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottie.json; sourceTree = "<group>"; };
 		C5CE8D2AF3DB6CF966903FA0 /* Pods-pamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pamTests/Pods-pamTests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4A565F42BACA4721A92A22 /* Pods-pamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pamUITests/Pods-pamUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F96D6E73AF8B62AC91C617F1 /* Pods_pamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,7 +195,7 @@
 		0838AFB42095FC3B00A6D33E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B8F5F0D321791E3100D4D7AF /* lottie.json */,
+				B8457E672190C41A00AB8722 /* lottie.json */,
 				B85B070F2178F03300A0EF93 /* Constants.swift */,
 				B85B07112178F4AB00A0EF93 /* RoundShadowButton.swift */,
 				083D22632049FC3800977895 /* Info.plist */,
@@ -296,9 +296,9 @@
 		B80A4AD5218E3F4800FFFC86 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */,
 				B8DAD8CE20C9C80B00D2B7CF /* OnboardingTableViewController.swift */,
 				B8DAD8D020C9CA1D00D2B7CF /* OnboardingTableViewCell.swift */,
-				B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -415,7 +415,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8F5F0D421791E3200D4D7AF /* lottie.json in Resources */,
+				B8457E682190C41A00AB8722 /* lottie.json in Resources */,
 				08541641204C271E00BC3EF1 /* .swiftlint.yml in Resources */,
 				083D22622049FC3800977895 /* LaunchScreen.storyboard in Resources */,
 				0847C41F2052BF9C00D99E99 /* docs in Resources */,
