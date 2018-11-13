@@ -2,6 +2,7 @@ import UIKit
 import Alamofire
 import Atributika
 import JGProgressHUD
+import SafariServices
 
 class NewsViewController: UIViewController, UIScrollViewDelegate {
     var pressedTitle: String?
@@ -73,10 +74,21 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
         
         titleTextView.text = pressedTitle!
         linkLabel.text = pressedLink!
+        
+        let tap = UIGestureRecognizer(target: self, action: #selector(NewsViewController.showWebView))
+        linkLabel.isUserInteractionEnabled = true
+        linkLabel.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @objc func showWebView() {
+        let svc = SFSafariViewController(url: URL(string: pressedLink!)!)
+        svc.modalPresentationStyle = .overFullScreen
+        svc.preferredControlTintColor = Colors.myRed
+        present(svc, animated: true, completion: nil)
     }
     
     func setTransluscentNavBar() {
@@ -97,12 +109,14 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func share(_ sender: Any) {
         
-        let someText: String = "Check this article."
+        showWebView()
+        
+        /*let someText: String = "Check this article."
         let objectsToShare: URL = URL(string: pressedLink!)!
         let sharedObjects: [AnyObject] = [objectsToShare as AnyObject, someText as AnyObject]
         let activityViewController = UIActivityViewController(activityItems: sharedObjects, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         
-        self.present(activityViewController, animated: true, completion: nil)
+        self.present(activityViewController, animated: true, completion: nil)*/
     }
 }

@@ -18,10 +18,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         newsTableView.delegate = self
         newsTableView.dataSource = self
         
-        if newsTableView.visibleCells.isEmpty {
-            print("B Ł Ą D")
-            showAlert()
-        }
         navigationController?.navigationBar.isTranslucent = true
         fetchArticles()
     }
@@ -32,13 +28,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func fetchArticles() {
         var sourcesString = ""
-        var sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
+        let sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
         for var source in sources {
             source = source.replacingOccurrences(of: " ", with: "-")
             sourcesString.append(source.lowercased())
             sourcesString.append(",")
         }
-        var link = "https://newsapi.org/v2/top-headlines?sources=\(sourcesString)&apiKey=d8e20e6ac3064675a2a9733b2e7c96c1"
+        let link = "https://newsapi.org/v2/top-headlines?sources=\(sourcesString)&apiKey=d8e20e6ac3064675a2a9733b2e7c96c1"
         print(link)
         
         let urlRequest = URLRequest(url: URL(string: link)!)
@@ -80,6 +76,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
                 DispatchQueue.main.async {
                     self.newsTableView.reloadData()
+                    if self.newsTableView.visibleCells.isEmpty {
+                        print("B Ł Ą D")
+                        self.showAlert()
+                    }
                 }
                 
             } catch let error {
