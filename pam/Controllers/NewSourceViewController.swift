@@ -10,17 +10,19 @@ import UIKit
 class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let categories = ["General", "Mobile", "Programming", "Video Games"]
-    var sources: [String] = []
 
     @IBOutlet weak var categoryInput: UITextField!
     @IBOutlet weak var websiteInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
         
-        navigationController?.navigationBar.backgroundColor = .clear
-        navigationController?.navigationBar.isTranslucent = true
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController!.view.backgroundColor = UIColor.white
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        self.navigationController?.navigationBar.autoresizesSubviews = false
         
         initPickerView()
     }
@@ -47,13 +49,15 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: "donePicker")
         let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cance;", style: UIBarButtonItemStyle.plain, target: self, action: "cancelPicker")
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: "cancelPicker")
         
         toolbar.setItems([cancelButton, space, doneButton], animated: false)
         toolbar.isUserInteractionEnabled = true
         
         categoryInput.inputView = picker
         categoryInput.inputAccessoryView = toolbar
+        
+        categoryInput.text = "General"
     }
     
     @objc func donePicker() {
@@ -71,14 +75,25 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBAction func save(_ sender: Any) {
         
         if (websiteInput.text)! == "" {
-            websiteInput.layer.borderWidth = 1.0
+            websiteInput.layer.borderWidth = 2.0
             websiteInput.layer.cornerRadius = 5.0
             websiteInput.layer.borderColor = UIColor(red:1.00, green:0.27, blue:0.32, alpha:1.0).cgColor
             print("Puste pole tytułu strony")
+        } else if (categoryInput.text)! == "" {
+            categoryInput.layer.borderWidth = 2.0
+            categoryInput.layer.cornerRadius = 5.0
+            categoryInput.layer.borderColor = UIColor(red:1.00, green:0.27, blue:0.32, alpha:1.0).cgColor
         } else {
-            UserDefaults.standard.removeObject(forKey: "selectedSitesArray")
-            sources.append((websiteInput.text)!)
-            UserDefaults.standard.set(sources, forKey: "selectedSitesArray")
+            var dictionary = UserDefaults.standard.dictionary(forKey: "selectedSitesDictionary")
+            var curCategoryArray = dictionary![(categoryInput.text)!] as! [String]
+            curCategoryArray.append((websiteInput.text)!)
+            
+            print("Tablica ze źródłami danej kategorii po dodaniu nowej: \(curCategoryArray)")
+            
+            dictionary?.updateValue(curCategoryArray, forKey: (categoryInput.text)!)
+            UserDefaults.standard.removeObject(forKey: "selectedSitesDictionary")
+            UserDefaults.standard.set(dictionary, forKey: "selectedSitesDictionary")
+            
             self.dismiss(animated: true, completion: nil)
         }
     }

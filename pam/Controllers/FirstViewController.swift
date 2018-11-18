@@ -22,7 +22,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         currentTabButton = allButton
         
-        
         newsTableView.scrollsToTop = false
         newsTableView.delegate = self
         newsTableView.dataSource = self
@@ -42,14 +41,29 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     }
         
-    func fetchArticles() {
+    func fetchArticles(category: String = "All") {
+        
         var sourcesString = ""
-        let sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
-        for var source in sources {
-            source = source.replacingOccurrences(of: " ", with: "-")
-            sourcesString.append(source.lowercased())
-            sourcesString.append(",")
+        let sources = UserDefaults.standard.dictionary(forKey: "selectedSitesDictionary")
+        var values: [String]
+        
+        if category == "All" {
+            // Jeśli funkcja zostaje wywołana dla wszystkich artykułów, to łącze wartości z słownika, tworząc tablicę wszystkich stron (+ śmieci w postaci "")
+            values = (sources!["General"] as? [String])! + (sources!["Mobile"] as? [String])! + (sources!["Programming"] as? [String])! + (sources!["Video Games"] as? [String])!
+        } else {
+            values = (sources![category] as? [String])!
         }
+        
+        print("Tablica z nazwami stron do przetworzenia: \(values)")
+        
+        for var source in values {
+            if source != "" {
+                source = source.replacingOccurrences(of: " ", with: "-")
+                sourcesString.append(source.lowercased())
+                sourcesString.append(",")
+            }
+        }
+        
         let link = "https://newsapi.org/v2/top-headlines?sources=\(sourcesString)&apiKey=d8e20e6ac3064675a2a9733b2e7c96c1"
         print(link)
         
@@ -63,7 +77,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             self.articles = [Article]()
             do {
-                // swiftlint:disable force_cast
                 let json = try JSONSerialization.jsonObject(with: data!,
                                                             options: .mutableContainers) as! [String: AnyObject]
 
@@ -106,9 +119,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func showAlert() {
-        let alert = UIAlertController(title: "An error has occurred", message: "Check your sources", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let alert = UIAlertController(title: "Empty space", message: "No data to show", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            switch action.style{
+            switch action.style {
             case .default:
                 print("default")
                 
@@ -118,17 +132,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             case .destructive:
                 print("destructive")
                 
-                
             }}))
+        
         self.present(alert, animated: true, completion: nil)
     }
-    
-    /*func convertTime() -> String {
-        
-        let date = Date()
-        
-        return
-    }*/
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let articles = articles else {
@@ -203,22 +210,27 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func allAction(_ sender: UIButton) {
         changeTabState(sender: sender)
+        fetchArticles()
     }
     
     @IBAction func generalAction(_ sender: UIButton) {
         changeTabState(sender: sender)
+        fetchArticles(category: (sender.titleLabel?.text)!)
     }
     
     @IBAction func mobileAction(_ sender: UIButton) {
         changeTabState(sender: sender)
+        fetchArticles(category: (sender.titleLabel?.text)!)
     }
     
     @IBAction func programmingAction(_ sender: UIButton) {
         changeTabState(sender: sender)
+        fetchArticles(category: (sender.titleLabel?.text)!)
     }
     
     @IBAction func videoGamesAction(_ sender: UIButton) {
         changeTabState(sender: sender)
+        fetchArticles(category: (sender.titleLabel?.text)!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -282,6 +294,4 @@ extension Date {
         return "\(secondsAgo / week) weeks ago"
     }
 
-    
-    
 }

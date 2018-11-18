@@ -2,23 +2,26 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let versionNumber: String = "0.8"
+    let versionNumber: String = "1.1"
     @IBOutlet weak var versionViewLabel: UILabel!
     @IBOutlet weak var sourcesTableView: UITableView!
     
-    var sources: [String] = []
+    let sections = ["General", "Mobile", "Programming", "Video Games"]
+    var dictionary = UserDefaults.standard.dictionary(forKey: "selectedSitesDictionary")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isTranslucent = true
-        sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
+        
         versionViewLabel.text = "version: \(versionNumber)"
+        
         sourcesTableView.delegate = self
         sourcesTableView.dataSource = self
+        
         sourcesTableView.tableFooterView = UIView()
     }
     override func viewDidAppear(_ animated: Bool) {
-        sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
+        dictionary = UserDefaults.standard.dictionary(forKey: "selectedSitesDictionary")
         sourcesTableView.reloadData()
     }
 
@@ -27,13 +30,29 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sources.count
+        
+        var curCategoryArray = dictionary![sections[section]] as! [String]
+        curCategoryArray = curCategoryArray.filter { $0 != "" }
+        
+        return curCategoryArray.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.sections.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.sections[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable force_cast
         let cell = sourcesTableView.dequeueReusableCell(withIdentifier: "sourceCell") as! SourceTableViewCell
-        cell.sourceLabel.text = sources[indexPath.row]
+        
+        var curCategoryArray = dictionary![sections[indexPath.section]] as! [String]
+        curCategoryArray = curCategoryArray.filter { $0 != "" }
+        
+        cell.sourceLabel.text = curCategoryArray[indexPath.row]
         
         return cell
     }
@@ -42,12 +61,17 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                    forRowAt indexPath: IndexPath) {
      
         if editingStyle == .delete {
-         sources.remove(at: indexPath.row)
-         UserDefaults.standard.removeObject(forKey: "selectedSitesArray")
-         UserDefaults.standard.set(sources, forKey: "selectedSitesArray")
-         tableView.beginUpdates()
-         tableView.deleteRows(at: [indexPath], with: .automatic)
-         tableView.endUpdates()
+            var curCategoryArray = dictionary![sections[indexPath.section]] as! [String]
+            curCategoryArray = curCategoryArray.filter { $0 != "" }
+            curCategoryArray.remove(at: indexPath.row)
+            
+            dictionary?.updateValue(curCategoryArray, forKey: sections[indexPath.section])
+            UserDefaults.standard.removeObject(forKey: "selectedSitesDictionary")
+            UserDefaults.standard.set(dictionary, forKey: "selectedSitesDictionary")
+            
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
      }
     }
     
@@ -55,7 +79,4 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         return 50
     }
     
-    func addSources(website: String, category: String) {
-        sources.append(website)
-    }
 }

@@ -16,7 +16,10 @@ class OnboardingTableViewController: UITableViewController {
                  ["Hacker News", "Recode"],
                  ["IGN", "Polygon"]]
 
-    var selectedSites = [String]()
+    var selectedSites = ["General": [""],
+                         "Mobile": [""],
+                         "Programming": [""],
+                         "Video Games": [""]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +31,8 @@ class OnboardingTableViewController: UITableViewController {
     }
     
     @IBAction func endOnboarding(_ sender: Any) {
-        UserDefaults.standard.set(selectedSites, forKey: "selectedSitesArray")
+        UserDefaults.standard.set(selectedSites, forKey: "selectedSitesDictionary")
+        print(selectedSites)
         UserDefaults.standard.set(true, forKey: "FIRST_TIME")
         performSegue(withIdentifier: "MainView", sender: nil)
     }
@@ -59,10 +63,18 @@ class OnboardingTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath)
         if cell?.accessoryType == UITableViewCellAccessoryType.checkmark {
             cell?.accessoryType = UITableViewCellAccessoryType.none
-            selectedSites = selectedSites.filter{$0 != sites[indexPath.section][indexPath.row]}
+            var curArray = selectedSites[section[indexPath.section]]
+            print("Zaznaczone strony z danej kategorii: \(curArray!)")
+            curArray = curArray?.filter{ $0 != sites[indexPath.section][indexPath.row] }
+            print("Zaznaczone strony z danej kategorii po usunięciu: \(curArray!)")
+            selectedSites[section[indexPath.section]] = curArray
+            //selectedSites.removeValue(forKey: sites[indexPath.section][indexPath.row])
         } else {
             cell?.accessoryType = UITableViewCellAccessoryType.checkmark
-            selectedSites.append(sites[indexPath.section][indexPath.row])
+            //selectedSites.updateValue(section[indexPath.section], forKey: sites[indexPath.section][indexPath.row])
+            selectedSites[section[indexPath.section]]!.append(sites[indexPath.section][indexPath.row])
+            //var newArray: [String] = selectedSites[section[indexPath.section]].append(sites[indexPath.section][indexPath.row])
+            //selectedSites.updateValue(newArray, forKey: section[indexPath.section])
         }
         print(selectedSites)
         print(indexPath)
