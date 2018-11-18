@@ -71,7 +71,10 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBAction func save(_ sender: Any) {
         
         if (websiteInput.text)! == "" {
-            websiteInput.layer.shadowColor = UIColor(red:1.00, green:0.27, blue:0.32, alpha:1.0).cgColor
+            websiteInput.layer.borderWidth = 1.0
+            websiteInput.layer.cornerRadius = 5.0
+            websiteInput.layer.borderColor = UIColor(red:1.00, green:0.27, blue:0.32, alpha:1.0).cgColor
+            print("Puste pole tytułu strony")
         } else {
             UserDefaults.standard.removeObject(forKey: "selectedSitesArray")
             sources.append((websiteInput.text)!)

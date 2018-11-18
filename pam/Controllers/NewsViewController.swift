@@ -37,7 +37,7 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController!.view.backgroundColor = UIColor.clear
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-        setTransluscentNavBar()
+        //setTransluscentNavBar()
         
         self.scrollView.delegate = self
         

@@ -1,19 +1,28 @@
 import UIKit
 import FavIcon
+import Tabman
+import Pageboy
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var selectedTitle: String?
     private var selectedLink: String?
     private var selectedImage: String?
     
+    private var currentTabButton: UIButton?
+    
     var articles: [Article]? = []
     
     @IBOutlet weak var newsTableView: UITableView!
+    @IBOutlet weak var allButton: UIButton!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.removeTabbarItemsText()
+        currentTabButton = allButton
+        
+        
         newsTableView.scrollsToTop = false
         newsTableView.delegate = self
         newsTableView.dataSource = self
@@ -23,9 +32,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController!.view.backgroundColor = UIColor.white
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        self.navigationController?.navigationBar.autoresizesSubviews = false
         fetchArticles()
+
     }
-    
+        
     func fetchArticles() {
         var sourcesString = ""
         let sources = UserDefaults.standard.array(forKey: "selectedSitesArray") as! [String]
@@ -164,6 +180,47 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         performSegue(withIdentifier: "goToNewsDetail", sender: self)
     }
     
+    // ScrollView - Tab
+    
+    func changeTabState(sender: UIButton) {
+        sender.isEnabled = false
+        sender.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
+        sender.setTitleColor(UIColor.black, for: .normal)
+        
+        let scrollWidth = scrollView.frame.width
+        let scrollHeight = scrollView.frame.height
+        
+        let desiredXCoor = sender.frame.origin.x - ((scrollWidth / 2) - (sender.frame.width / 2) )
+        let rect = CGRect(x: desiredXCoor, y: 0, width: scrollWidth, height: scrollHeight)
+        scrollView.scrollRectToVisible(rect, animated: true)
+        
+        currentTabButton?.isEnabled = true
+        currentTabButton?.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.semibold)
+        currentTabButton?.setTitleColor(UIColor.lightGray, for: .normal)
+        currentTabButton = sender
+        print("Zakończono zmianę UIButton")
+    }
+    
+    @IBAction func allAction(_ sender: UIButton) {
+        changeTabState(sender: sender)
+    }
+    
+    @IBAction func generalAction(_ sender: UIButton) {
+        changeTabState(sender: sender)
+    }
+    
+    @IBAction func mobileAction(_ sender: UIButton) {
+        changeTabState(sender: sender)
+    }
+    
+    @IBAction func programmingAction(_ sender: UIButton) {
+        changeTabState(sender: sender)
+    }
+    
+    @IBAction func videoGamesAction(_ sender: UIButton) {
+        changeTabState(sender: sender)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToNewsDetail" {
             if let destinationVC = segue.destination as? NewsViewController {
@@ -224,4 +281,7 @@ extension Date {
         }
         return "\(secondsAgo / week) weeks ago"
     }
+
+    
+    
 }

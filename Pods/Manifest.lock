@@ -4,11 +4,16 @@ PODS:
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.3)
   - Atributika (4.4.3)
+  - AutoInsetter (1.2.4)
   - FavIcon (3.0.3)
   - JGProgressHUD (2.0.3)
   - lottie-ios (2.5.0)
   - ObjectMapper (3.3.0)
+  - Pageboy (2.5.2)
   - SwiftLint (0.25.1)
+  - Tabman (1.9.1):
+    - AutoInsetter (~> 1.2.0)
+    - Pageboy (~> 2.5.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -18,28 +23,35 @@ DEPENDENCIES:
   - JGProgressHUD
   - lottie-ios
   - SwiftLint (~> 0.25.0)
+  - Tabman
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireObjectMapper
     - Atributika
+    - AutoInsetter
     - FavIcon
     - JGProgressHUD
     - lottie-ios
     - ObjectMapper
+    - Pageboy
     - SwiftLint
+    - Tabman
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   AlamofireObjectMapper: 3395e698901d8b0e6f48b7d0c43bd47875325102
   Atributika: c2ecee6c96af80c29d6ed1606e70fa137e51790f
+  AutoInsetter: 00cbcc6c56e9294169222b3e29fb336db7181156
   FavIcon: d574c025fb64c307d3246370baf838e3ae881edd
   JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  Pageboy: dd62a213a5cfb9cf3f97a0845e8703c0b8377a9a
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
+  Tabman: e867a8e3fc72a30cc694aca51a2b331070f5e3ba
 
-PODFILE CHECKSUM: 38c2301e2b93a4969d8b4e8006b0cafe15c48e23
+PODFILE CHECKSUM: b08b9000217fa073de8766b5df5c18c161c4ad45
 
 COCOAPODS: 1.5.3

@@ -25,5 +25,6 @@ target 'pam' do
   pod 'FavIcon', '~> 3.0.0'
   pod 'lottie-ios'
   pod 'JGProgressHUD'
+  pod 'Tabman'
 
 end
