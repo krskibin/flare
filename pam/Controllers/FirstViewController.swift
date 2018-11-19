@@ -37,7 +37,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.navigationController!.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.autoresizesSubviews = false
-        fetchArticles()
+        //fetchArticles()
 
     }
         
