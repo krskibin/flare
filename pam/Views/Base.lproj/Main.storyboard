@@ -437,7 +437,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="The Verge" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZp-Yz-cij">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="The Verge" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZp-Yz-cij" customClass="SearchTextField" customModule="SearchTextField">
                                 <rect key="frame" x="16" y="163.33333333333334" width="382" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="CvW-E0-bL8"/>
@@ -499,7 +499,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="categoryInput" destination="cVq-dO-F0n" id="hvd-Wd-rdO"/>
-                        <outlet property="websiteInput" destination="gZp-Yz-cij" id="i6Y-Ue-r2h"/>
+                        <outlet property="websiteInput" destination="gZp-Yz-cij" id="qeE-Sm-3Wm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DRk-1c-A7b" userLabel="First Responder" sceneMemberID="firstResponder"/>

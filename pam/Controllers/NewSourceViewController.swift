@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import SearchTextField
 
 class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let categories = ["General", "Mobile", "Programming", "Video Games"]
+    var filterResults: [String] = ["The Verge", "Engadget", "Ars Technica", "Hacker News", "Mashable", "Polygon", "National Geographic", "New Scientist", "Recode", "TechCrunch", "The Next Web", "Wired", "IGN"]
 
     @IBOutlet weak var categoryInput: UITextField!
-    @IBOutlet weak var websiteInput: UITextField!
+    @IBOutlet weak var websiteInput: SearchTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,32 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         self.navigationController!.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.autoresizesSubviews = false
+        
+        websiteInput.filterStrings(filterResults)
+        
+        websiteInput.theme.cellHeight = 50
+        websiteInput.theme.font = UIFont.systemFont(ofSize: 14)
+        websiteInput.theme.bgColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
+        websiteInput.theme.separatorColor = UIColor(red:0.91, green:0.91, blue:0.91, alpha:1.0)
+        websiteInput.maxNumberOfResults = 5
+        
+        websiteInput.userStoppedTypingHandler = {
+            if let criteria = self.websiteInput.text {
+                if criteria.count > 1 {
+                    
+                    // Show loading indicator
+                    self.websiteInput.showLoadingIndicator()
+                    
+                    var results = self.searchMoreItemsInBackground(criteria: criteria)
+                    
+                    // Set new items to filter
+                    //self.websiteInput.filterStrings(results)
+                    print("Wyszukano nowe stronki")
+                    // Hide loading indicator
+                    self.websiteInput.stopLoadingIndicator()
+                }
+            }
+        }
         
         initPickerView()
     }
@@ -66,6 +94,12 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     @objc func cancelPicker() {
         categoryInput.resignFirstResponder()
+    }
+    
+    func searchMoreItemsInBackground(criteria: String) -> [String] {
+        // wyszukaj nowe, pasujące strony
+        let results = ["One", "Two", "Three"]
+        return results
     }
     
     @IBAction func cancel(_ sender: Any) {

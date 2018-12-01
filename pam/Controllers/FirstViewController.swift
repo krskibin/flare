@@ -1,7 +1,5 @@
 import UIKit
 import FavIcon
-import Tabman
-import Pageboy
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var selectedTitle: String?

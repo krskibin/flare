@@ -35,15 +35,13 @@
 		B85B070A2178E68C00A0EF93 /* Pods_pamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B07092178E68C00A0EF93 /* Pods_pamUITests.framework */; };
 		B85B07102178F03300A0EF93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85B070F2178F03300A0EF93 /* Constants.swift */; };
 		B85B07122178F4AB00A0EF93 /* RoundShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85B07112178F4AB00A0EF93 /* RoundShadowButton.swift */; };
+		B86F01C521B2E7D300BC4A82 /* SearchTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86F01C421B2E7D300BC4A82 /* SearchTextField.framework */; };
 		B88FEBC420D3B2B40035608F /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88FEBC320D3B2B40035608F /* CustomScrollView.swift */; };
 		B8DAD8CD20C9C5E400D2B7CF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */; };
 		B8DAD8CF20C9C80B00D2B7CF /* OnboardingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAD8CE20C9C80B00D2B7CF /* OnboardingTableViewController.swift */; };
 		B8DAD8D120C9CA1D00D2B7CF /* OnboardingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAD8D020C9CA1D00D2B7CF /* OnboardingTableViewCell.swift */; };
 		B8E4E1E02057D28A00E216C9 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E4E1DF2057D28A00E216C9 /* NewsTableViewCell.swift */; };
 		B8EAD7D82097575100A55F47 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EAD7D72097575100A55F47 /* NewsViewController.swift */; };
-		B8EE749021A19365000D67E1 /* AutoInsetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EE748F21A19365000D67E1 /* AutoInsetter.framework */; };
-		B8EE749221A19365000D67E1 /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EE749121A19365000D67E1 /* Pageboy.framework */; };
-		B8EE749421A19365000D67E1 /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EE749321A19365000D67E1 /* Tabman.framework */; };
 		B8F4FB86217E75FD009D95F5 /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F4FB85217E75FD009D95F5 /* JGProgressHUD.framework */; };
 		B8F59529209F511A00A42633 /* NewSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F59528209F511900A42633 /* NewSourceViewController.swift */; };
 		E100309CA84FE00BF8E6972C /* Pods_pamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85B07092178E68C00A0EF93 /* Pods_pamUITests.framework */; };
@@ -108,6 +106,7 @@
 		B85B07092178E68C00A0EF93 /* Pods_pamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_pamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85B070F2178F03300A0EF93 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B85B07112178F4AB00A0EF93 /* RoundShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundShadowButton.swift; sourceTree = "<group>"; };
+		B86F01C421B2E7D300BC4A82 /* SearchTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SearchTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B88FEBC320D3B2B40035608F /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = pam/Controllers/Onboarding/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		B8DAD8CE20C9C80B00D2B7CF /* OnboardingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTableViewController.swift; sourceTree = "<group>"; };
@@ -129,9 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8EE749021A19365000D67E1 /* AutoInsetter.framework in Frameworks */,
-				B8EE749221A19365000D67E1 /* Pageboy.framework in Frameworks */,
-				B8EE749421A19365000D67E1 /* Tabman.framework in Frameworks */,
+				B86F01C521B2E7D300BC4A82 /* SearchTextField.framework in Frameworks */,
 				B8F4FB86217E75FD009D95F5 /* JGProgressHUD.framework in Frameworks */,
 				B85B06FC2178E68C00A0EF93 /* Alamofire.framework in Frameworks */,
 				B85B06FE2178E68C00A0EF93 /* AlamofireObjectMapper.framework in Frameworks */,
@@ -273,6 +270,7 @@
 		695D3C392AB5477CD123F21E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B86F01C421B2E7D300BC4A82 /* SearchTextField.framework */,
 				B8EE748F21A19365000D67E1 /* AutoInsetter.framework */,
 				B8EE749121A19365000D67E1 /* Pageboy.framework */,
 				B8EE749321A19365000D67E1 /* Tabman.framework */,
@@ -494,12 +492,10 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Atributika/Atributika.framework",
-				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
 				"${BUILT_PRODUCTS_DIR}/FavIcon/FavIcon.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
-				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
+				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -507,12 +503,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Atributika.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FavIcon.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
