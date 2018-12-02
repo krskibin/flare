@@ -10,7 +10,7 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
     var pressedImage: String?
     
     @IBOutlet weak var descriptionLabel: UITextView!
-    @IBOutlet weak var linkLabel: UILabel!
+    @IBOutlet weak var linkBtn: UIButton!
     @IBOutlet weak var topImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleTextView: UITextView!
@@ -73,11 +73,7 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
         }
         
         titleTextView.text = pressedTitle!
-        linkLabel.text = pressedLink!
-        
-        let tap = UIGestureRecognizer(target: self, action: #selector(NewsViewController.showWebView))
-        linkLabel.isUserInteractionEnabled = true
-        linkLabel.addGestureRecognizer(tap)
+        linkBtn.setTitle(pressedLink!, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,16 +103,21 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
         setTransluscentNavBar()
     }
     
-    @IBAction func share(_ sender: Any) {
+    @IBAction func showWBV(_ sender: Any) {
         
         showWebView()
+
+    }
+    
+    
+    @IBAction func share(_ sender: Any) {
         
-        /*let someText: String = "Check this article."
+        let someText: String = "Check this article."
         let objectsToShare: URL = URL(string: pressedLink!)!
         let sharedObjects: [AnyObject] = [objectsToShare as AnyObject, someText as AnyObject]
         let activityViewController = UIActivityViewController(activityItems: sharedObjects, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         
-        self.present(activityViewController, animated: true, completion: nil)*/
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }

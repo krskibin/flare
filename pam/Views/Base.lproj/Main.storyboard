@@ -35,12 +35,6 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jny-dM-Z5V">
-                                                <rect key="frame" x="48" y="348.33333333333331" width="350" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UlZ-YO-p0a">
                                                 <rect key="frame" x="16" y="379" width="382" height="275"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -60,10 +54,19 @@
                                                     <constraint firstAttribute="width" constant="20" id="zr3-dc-ANU"/>
                                                 </constraints>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZE8-f1-tTu" userLabel="LinkBtn">
+                                                <rect key="frame" x="52" y="342" width="346" height="30"/>
+                                                <state key="normal" title="Link">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showWBV:" destination="DC9-Dk-fUP" eventType="touchUpInside" id="E1U-Yw-q1b"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="jny-dM-Z5V" firstAttribute="leading" secondItem="7zk-03-mfp" secondAttribute="trailing" constant="12" id="1Yv-JL-3M9"/>
+                                            <constraint firstItem="ZE8-f1-tTu" firstAttribute="centerY" secondItem="7zk-03-mfp" secondAttribute="centerY" id="3Ge-Og-Xzi"/>
                                             <constraint firstItem="7zk-03-mfp" firstAttribute="leading" secondItem="0kW-N9-K1N" secondAttribute="leading" constant="16" id="CAg-lW-vLt"/>
                                             <constraint firstItem="UlZ-YO-p0a" firstAttribute="leading" secondItem="0kW-N9-K1N" secondAttribute="leading" constant="16" id="FSh-Kb-cT6"/>
                                             <constraint firstItem="nbE-Fi-Jbu" firstAttribute="top" secondItem="UlZ-YO-p0a" secondAttribute="bottom" constant="16" id="GZ7-iw-hMo"/>
@@ -71,7 +74,8 @@
                                             <constraint firstItem="vW5-eb-wNU" firstAttribute="leading" secondItem="0kW-N9-K1N" secondAttribute="leading" id="JtJ-i2-2PQ"/>
                                             <constraint firstItem="nbE-Fi-Jbu" firstAttribute="centerX" secondItem="0kW-N9-K1N" secondAttribute="centerX" id="Qxl-oI-bmS"/>
                                             <constraint firstAttribute="bottom" secondItem="nbE-Fi-Jbu" secondAttribute="bottom" constant="42" id="UV0-GD-PkX"/>
-                                            <constraint firstAttribute="trailing" secondItem="jny-dM-Z5V" secondAttribute="trailing" constant="16" id="eeY-ih-dI5"/>
+                                            <constraint firstItem="ZE8-f1-tTu" firstAttribute="leading" secondItem="7zk-03-mfp" secondAttribute="trailing" constant="16" id="Y5U-iP-Hpg"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZE8-f1-tTu" secondAttribute="trailing" constant="16" id="Zux-bW-p7a"/>
                                             <constraint firstItem="vW5-eb-wNU" firstAttribute="top" secondItem="0kW-N9-K1N" secondAttribute="top" id="eea-eB-rA3"/>
                                             <constraint firstAttribute="trailing" secondItem="vW5-eb-wNU" secondAttribute="trailing" id="hND-6v-XmG"/>
                                             <constraint firstItem="UlZ-YO-p0a" firstAttribute="top" secondItem="7zk-03-mfp" secondAttribute="bottom" constant="12" id="j4p-Ng-K86"/>
@@ -79,7 +83,6 @@
                                             <constraint firstItem="7zk-03-mfp" firstAttribute="top" secondItem="l3h-1w-DhA" secondAttribute="bottom" constant="12" id="n6I-UA-uGg"/>
                                             <constraint firstAttribute="trailing" secondItem="UlZ-YO-p0a" secondAttribute="trailing" constant="16" id="t2u-zH-6N6"/>
                                             <constraint firstAttribute="trailing" secondItem="l3h-1w-DhA" secondAttribute="trailing" constant="16" id="wH7-sM-FBz"/>
-                                            <constraint firstItem="jny-dM-Z5V" firstAttribute="centerY" secondItem="7zk-03-mfp" secondAttribute="centerY" id="wYB-IE-090"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -106,7 +109,7 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="UlZ-YO-p0a" id="JpN-iv-HH5"/>
                         <outlet property="descriptionTextView" destination="UlZ-YO-p0a" id="uUo-9n-nJ9"/>
-                        <outlet property="linkLabel" destination="jny-dM-Z5V" id="qM7-B6-9WQ"/>
+                        <outlet property="linkBtn" destination="ZE8-f1-tTu" id="CKG-4o-Mwe"/>
                         <outlet property="scrollView" destination="rs5-w7-jEi" id="z9a-zA-qXg"/>
                         <outlet property="titleTextView" destination="l3h-1w-DhA" id="2VC-qv-2NB"/>
                         <outlet property="topImage" destination="vW5-eb-wNU" id="FI5-PV-S5y"/>
