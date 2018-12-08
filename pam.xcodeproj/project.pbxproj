@@ -166,6 +166,7 @@
 		0838AFB12095FB9500A6D33E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B80A4AD5218E3F4800FFFC86 /* Onboarding */,
 				083D22572049FC3800977895 /* FirstViewController.swift */,
 				B8EAD7D72097575100A55F47 /* NewsViewController.swift */,
 				B88FEBC320D3B2B40035608F /* CustomScrollView.swift */,
@@ -173,7 +174,6 @@
 				B8236ABC20572B8D0023D9E1 /* SettingsViewController.swift */,
 				B84844BB209B7CC70088C845 /* SourceTableViewCell.swift */,
 				B8F59528209F511900A42633 /* NewSourceViewController.swift */,
-				B80A4AD5218E3F4800FFFC86 /* Onboarding */,
 				083D22552049FC3800977895 /* AppDelegate.swift */,
 			);
 			path = Controllers;
@@ -679,7 +679,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -732,7 +732,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -748,7 +748,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HZ4WC7NY4S;
 				INFOPLIST_FILE = "$(SRCROOT)/pam/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.krskibin.flare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -765,7 +765,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HZ4WC7NY4S;
 				INFOPLIST_FILE = "$(SRCROOT)/pam/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.krskibin.flare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
