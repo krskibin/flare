@@ -38,7 +38,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //fetchArticles()
 
     }
-        
+    
+    //swiftlint:disable:next function_body_length
     func fetchArticles(category: String = "All") {
         
         var sourcesString = ""
@@ -46,20 +47,20 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var values: [String]
         
         if category == "All" {
-            // Jeśli funkcja zostaje wywołana dla wszystkich artykułów, to łącze wartości z słownika, tworząc tablicę wszystkich stron (+ śmieci w postaci "")
-            values = (sources!["General"] as? [String])! + (sources!["Mobile"] as? [String])! + (sources!["Programming"] as? [String])! + (sources!["Video Games"] as? [String])!
+            /* Jeśli funkcja zostaje wywołana dla wszystkich artykułów, to łącze wartości z słownika, tworząc tablicę
+               wszystkich stron (+ śmieci w postaci "") */
+            values = (sources!["General"] as? [String])! + (sources!["Mobile"] as? [String])! +
+                 (sources!["Programming"] as? [String])! + (sources!["Video Games"] as? [String])!
         } else {
             values = (sources![category] as? [String])!
         }
         
         print("Tablica z nazwami stron do przetworzenia: \(values)")
         
-        for var source in values {
-            if source != "" {
-                source = source.replacingOccurrences(of: " ", with: "-")
-                sourcesString.append(source.lowercased())
-                sourcesString.append(",")
-            }
+        for var source in values where !source.isEmpty {
+            source = source.replacingOccurrences(of: " ", with: "-")
+            sourcesString.append(source.lowercased())
+            sourcesString.append(",")
         }
         
         let link = "https://newsapi.org/v2/top-headlines?sources=\(sourcesString)&apiKey=d8e20e6ac3064675a2a9733b2e7c96c1"
@@ -117,8 +118,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func showAlert() {
-        
-        let alert = UIAlertController(title: "Empty space", message: "No data to show", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Empty space",
+                                      message: "No data to show",
+                                      preferredStyle: UIAlertControllerStyle.alert)
+    
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style {
             case .default:

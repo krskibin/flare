@@ -11,7 +11,7 @@ import UIKit
 class OnboardingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var checkLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
