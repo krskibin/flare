@@ -1,11 +1,3 @@
-//
-//  SourceTableViewCell.swift
-//  pam
-//
-//  Created by Tobiasz Dobrowolski on 03.05.2018.
-//  Copyright © 2018 Krystian Skibiński. All rights reserved.
-//
-
 import UIKit
 
 class SourceTableViewCell: UITableViewCell {

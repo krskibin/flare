@@ -2,17 +2,18 @@ import UIKit
 import SearchTextField
 
 class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    var apiKey: String = "d8e20e6ac3064675a2a9733b2e7c96c1"
+    var apiCat: String = "science,technology,"
+    var filterResults: [String]? = []
 
     let categories = ["General", "Mobile", "Programming", "Video Games"]
-    var filterResults: [String] = ["The Verge", "Engadget", "Ars Technica", "Hacker News",
-                                   "Mashable", "Polygon", "National Geographic", "New Scientist",
-                                   "Recode", "TechCrunch", "The Next Web", "Wired", "IGN"]
 
     @IBOutlet weak var categoryInput: UITextField!
     @IBOutlet weak var websiteInput: SearchTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.fetchFilterResults()
 
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -20,8 +21,6 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         self.navigationController!.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.autoresizesSubviews = false
-
-        websiteInput.filterStrings(filterResults)
 
         websiteInput.theme.cellHeight = 50
         websiteInput.theme.font = UIFont.systemFont(ofSize: 14)
@@ -40,6 +39,7 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
                     // Set new items to filter
                     //self.websiteInput.filterStrings(results)
+                    print(self.filterResults ?? "nope")
                     print("Wyszukano nowe stronki")
                     // Hide loading indicator
                     self.websiteInput.stopLoadingIndicator()
@@ -143,5 +143,40 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow curRow: Int, inComponent component: Int) {
         categoryInput.text = categories[curRow]
+    }
+    
+    func fetchFilterResults() {
+        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v2/sources?categories=\(apiCat)&apiKey=\(apiKey)")!)
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            self.filterResults = [String]()
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!,
+                                                            options: .mutableContainers) as! [String: AnyObject]
+                
+                if let resultsFromJson = json["sources"] as? [[String: AnyObject]] {
+                    for resultFromJson in resultsFromJson {
+                        let result = FilterResult()
+                        
+                        if let name = resultFromJson["name"] as? String {
+                            result.name = name
+                            print(name)
+                        }
+                        if result.name != nil {
+                            self.filterResults?.append(result.name!)
+                        }
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.websiteInput.filterStrings(self.filterResults ?? ["Loading"])
+                }
+            } catch let error {
+                print(error)
+            }
+        }
+        task.resume()
     }
 }

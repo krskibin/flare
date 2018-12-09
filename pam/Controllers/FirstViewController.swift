@@ -63,7 +63,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             sourcesString.append(",")
         }
         
-        let link = "https://newsapi.org/v2/top-headlines?sources=\(sourcesString)&apiKey=d8e20e6ac3064675a2a9733b2e7c96c1"
+        let link = "https://newsapi.org/v2/top-headlines?totalResults=100&pageSize=100&sources=\(sourcesString)&apiKey=d8e20e6ac3064675a2a9733b2e7c96c1"
         print(link)
         
         let urlRequest = URLRequest(url: URL(string: link)!)
