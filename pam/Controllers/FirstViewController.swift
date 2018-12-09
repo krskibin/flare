@@ -1,7 +1,18 @@
 import UIKit
 import FavIcon
+import Nuke
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    let nukeOptions = ImageLoadingOptions(
+        placeholder: UIImage(named: "placeholder"),
+        failureImage: UIImage(named: "failure_image"),
+        contentModes: .init(
+            success: .scaleAspectFill,
+            failure: .center,
+            placeholder: .center
+        )
+    )
+    
     private var selectedTitle: String?
     private var selectedLink: String?
     private var selectedImage: String?
@@ -159,7 +170,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         if let imageUrl = self.articles?[indexPath.item].imageUrl {
-            cell.newsImage.downloadImage(from: (imageUrl))
+            var request = ImageRequest(url: (URL(string: imageUrl) ?? nil)!)
+            request.memoryCacheOptions.isWriteAllowed = false
+            request.priority = .high
+            loadImage(with: request, options: nukeOptions, into: cell.newsImage)
         } else {
             cell.newsImage.image = UIImage(named: "image")
         }
