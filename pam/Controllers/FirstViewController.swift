@@ -42,7 +42,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //swiftlint:disable:next function_body_length
     func fetchArticles(category: String = "All") {
         
-        var sourcesString = ""
+        var srcStr = "" // SourcesString
         let sources = UserDefaults.standard.dictionary(forKey: "selectedSitesDictionary")
         var values: [String]
         
@@ -55,16 +55,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             values = (sources![category] as? [String])!
         }
         
-        print("Tablica z nazwami stron do przetworzenia: \(values)")
-        
         for var source in values where !source.isEmpty {
             source = source.replacingOccurrences(of: " ", with: "-")
-            sourcesString.append(source.lowercased())
-            sourcesString.append(",")
+            srcStr.append(source.lowercased())
+            srcStr.append(",")
         }
-        
-        let link = "https://newsapi.org/v2/top-headlines?totalResults=100&pageSize=100&sources=\(sourcesString)&apiKey=d8e20e6ac3064675a2a9733b2e7c96c1"
-        print(link)
+        let apiKey: String = "d8e20e6ac3064675a2a9733b2e7c96c1"
+        let link = "https://newsapi.org/v2/top-headlines?totalResults=100&pageSize=100&sources=\(srcStr)&apiKey=\(apiKey)"
         
         let urlRequest = URLRequest(url: URL(string: link)!)
         
@@ -105,7 +102,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 DispatchQueue.main.async {
                     self.newsTableView.reloadData()
                     if self.newsTableView.visibleCells.isEmpty {
-                        print("B Ł Ą D")
                         self.showAlert()
                     }
                 }
@@ -124,15 +120,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style {
-            case .default:
-                print("default")
-                
-            case .cancel:
-                print("cancel")
-                
-            case .destructive:
-                print("destructive")
-                
+            case .default: break
+            case .cancel: break
+            case .destructive: break
             }}))
         
         self.present(alert, animated: true, completion: nil)
@@ -206,7 +196,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         currentTabButton?.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.semibold)
         currentTabButton?.setTitleColor(UIColor.lightGray, for: .normal)
         currentTabButton = sender
-        print("Zakończono zmianę UIButton")
     }
     
     @IBAction func allAction(_ sender: UIButton) {

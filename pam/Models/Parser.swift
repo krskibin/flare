@@ -58,7 +58,6 @@ class Parser {
                     completionHandler(nil, error)
                 case .success(let responseObject):
                     let result = responseObject.content
-                    print(responseObject)
                     completionHandler(result, nil)
                 }
             }

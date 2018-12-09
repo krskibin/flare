@@ -39,8 +39,6 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
 
                     // Set new items to filter
                     //self.websiteInput.filterStrings(results)
-                    print(self.filterResults ?? "nope")
-                    print("Wyszukano nowe stronki")
                     // Hide loading indicator
                     self.websiteInput.stopLoadingIndicator()
                 }
@@ -109,7 +107,6 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             websiteInput.layer.borderWidth = 2.0
             websiteInput.layer.cornerRadius = 5.0
             websiteInput.layer.borderColor = UIColor(red: 1.00, green: 0.27, blue: 0.32, alpha: 1.0).cgColor
-            print("Puste pole tytułu strony")
         } else if (categoryInput.text)! == "" {
             categoryInput.layer.borderWidth = 2.0
             categoryInput.layer.cornerRadius = 5.0
@@ -118,9 +115,6 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             var dictionary = UserDefaults.standard.dictionary(forKey: "selectedSitesDictionary")
             var curCategoryArray = dictionary![(categoryInput.text)!] as! [String]
             curCategoryArray.append((websiteInput.text)!)
-
-            print("Tablica ze źródłami danej kategorii po dodaniu nowej: \(curCategoryArray)")
-
             dictionary?.updateValue(curCategoryArray, forKey: (categoryInput.text)!)
             UserDefaults.standard.removeObject(forKey: "selectedSitesDictionary")
             UserDefaults.standard.set(dictionary, forKey: "selectedSitesDictionary")
@@ -163,7 +157,6 @@ class NewSourceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                         
                         if let name = resultFromJson["name"] as? String {
                             result.name = name
-                            print(name)
                         }
                         if result.name != nil {
                             self.filterResults?.append(result.name!)

@@ -28,7 +28,7 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
         if pressedImage != "" {
             let imageUrl = URL(string: pressedImage!)
             let data = try? Data(contentsOf: imageUrl!)
-            print("POBIERAM DO NOWA")
+
             topImage.image = UIImage(data: data!)
         }
 
