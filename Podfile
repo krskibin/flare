@@ -23,8 +23,9 @@ target 'pam' do
   pod 'AlamofireObjectMapper', '~> 5.0'
   pod 'Atributika', '~> 4.4.1'
   pod 'FavIcon', '~> 3.0.0'
-  pod 'lottie-ios'
-  pod 'JGProgressHUD'
-  pod 'SearchTextField'
+  pod 'Nuke', '~> 7.5.1'
+  pod 'lottie-ios', '~> 2.5.2'
+  pod 'JGProgressHUD', '~> 2.0.3'
+  pod 'SearchTextField', '~> 1.2.2'
 
 end

@@ -41,8 +41,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //swiftlint:disable:next function_body_length
     func fetchArticles(category: String = "All") {
-        
         var srcStr = "" // SourcesString
+        let apiKey: String = "d8e20e6ac3064675a2a9733b2e7c96c1"
+
         let sources = UserDefaults.standard.dictionary(forKey: "selectedSitesDictionary")
         var values: [String]
         
@@ -60,9 +61,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             srcStr.append(source.lowercased())
             srcStr.append(",")
         }
-        let apiKey: String = "d8e20e6ac3064675a2a9733b2e7c96c1"
-        let link = "https://newsapi.org/v2/top-headlines?totalResults=100&pageSize=100&sources=\(srcStr)&apiKey=\(apiKey)"
         
+        let link = "https://newsapi.org/v2/top-headlines?totalResults=100&pageSize=100&sources=\(srcStr)&apiKey=\(apiKey)"
         let urlRequest = URLRequest(url: URL(string: link)!)
         
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in

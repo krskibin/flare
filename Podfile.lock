@@ -7,6 +7,7 @@ PODS:
   - FavIcon (3.0.6)
   - JGProgressHUD (2.0.3)
   - lottie-ios (2.5.2)
+  - Nuke (7.5.1)
   - ObjectMapper (3.4.1)
   - SearchTextField (1.2.2)
   - SwiftLint (0.25.1)
@@ -16,9 +17,10 @@ DEPENDENCIES:
   - AlamofireObjectMapper (~> 5.0)
   - Atributika (~> 4.4.1)
   - FavIcon (~> 3.0.0)
-  - JGProgressHUD
-  - lottie-ios
-  - SearchTextField
+  - JGProgressHUD (~> 2.0.3)
+  - lottie-ios (~> 2.5.2)
+  - Nuke (~> 7.5.1)
+  - SearchTextField (~> 1.2.2)
   - SwiftLint (~> 0.25.0)
 
 SPEC REPOS:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - FavIcon
     - JGProgressHUD
     - lottie-ios
+    - Nuke
     - ObjectMapper
     - SearchTextField
     - SwiftLint
@@ -40,10 +43,11 @@ SPEC CHECKSUMS:
   FavIcon: e07ba9dd3cac1f76b81ccaa08fc2b41baa000b07
   JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
+  Nuke: 3814db501e55f17951451839c726ffd91641e9a5
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
   SearchTextField: a0992739d4b05dcbb40fb3a5cc6526bd991bdd23
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
 
-PODFILE CHECKSUM: 65930dc484afdf9e71ad9c453f4e23c430a351ca
+PODFILE CHECKSUM: 9eff9e0f2d4591a898f83fab6919bb6a046aaa38
 
 COCOAPODS: 1.5.3
