@@ -35,11 +35,6 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UlZ-YO-p0a">
-                                                <rect key="frame" x="16" y="379" width="382" height="275"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbE-Fi-Jbu">
                                                 <rect key="frame" x="195" y="670" width="24" height="24"/>
                                                 <state key="normal" image="ShareIcon"/>
@@ -63,13 +58,22 @@
                                                     <action selector="showWBV:" destination="DC9-Dk-fUP" eventType="touchUpInside" id="E1U-Yw-q1b"/>
                                                 </connections>
                                             </button>
+                                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nU4-Vp-2xW">
+                                                <rect key="frame" x="16" y="384" width="382" height="270"/>
+                                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <wkWebViewConfiguration key="configuration">
+                                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                    <wkPreferences key="preferences"/>
+                                                </wkWebViewConfiguration>
+                                            </wkWebView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ZE8-f1-tTu" firstAttribute="centerY" secondItem="7zk-03-mfp" secondAttribute="centerY" id="3Ge-Og-Xzi"/>
                                             <constraint firstItem="7zk-03-mfp" firstAttribute="leading" secondItem="0kW-N9-K1N" secondAttribute="leading" constant="16" id="CAg-lW-vLt"/>
-                                            <constraint firstItem="UlZ-YO-p0a" firstAttribute="leading" secondItem="0kW-N9-K1N" secondAttribute="leading" constant="16" id="FSh-Kb-cT6"/>
-                                            <constraint firstItem="nbE-Fi-Jbu" firstAttribute="top" secondItem="UlZ-YO-p0a" secondAttribute="bottom" constant="16" id="GZ7-iw-hMo"/>
+                                            <constraint firstItem="nU4-Vp-2xW" firstAttribute="top" secondItem="ZE8-f1-tTu" secondAttribute="bottom" constant="12" id="E4Q-TZ-QLA"/>
+                                            <constraint firstAttribute="trailing" secondItem="nU4-Vp-2xW" secondAttribute="trailing" constant="16" id="G4F-bC-J1g"/>
+                                            <constraint firstItem="nbE-Fi-Jbu" firstAttribute="top" secondItem="nU4-Vp-2xW" secondAttribute="bottom" constant="16" id="Gan-vh-4cB"/>
                                             <constraint firstItem="l3h-1w-DhA" firstAttribute="leading" secondItem="0kW-N9-K1N" secondAttribute="leading" constant="16" id="Iei-E4-6A5"/>
                                             <constraint firstItem="vW5-eb-wNU" firstAttribute="leading" secondItem="0kW-N9-K1N" secondAttribute="leading" id="JtJ-i2-2PQ"/>
                                             <constraint firstItem="nbE-Fi-Jbu" firstAttribute="centerX" secondItem="0kW-N9-K1N" secondAttribute="centerX" id="Qxl-oI-bmS"/>
@@ -78,10 +82,9 @@
                                             <constraint firstAttribute="trailing" secondItem="ZE8-f1-tTu" secondAttribute="trailing" constant="16" id="Zux-bW-p7a"/>
                                             <constraint firstItem="vW5-eb-wNU" firstAttribute="top" secondItem="0kW-N9-K1N" secondAttribute="top" id="eea-eB-rA3"/>
                                             <constraint firstAttribute="trailing" secondItem="vW5-eb-wNU" secondAttribute="trailing" id="hND-6v-XmG"/>
-                                            <constraint firstItem="UlZ-YO-p0a" firstAttribute="top" secondItem="7zk-03-mfp" secondAttribute="bottom" constant="12" id="j4p-Ng-K86"/>
                                             <constraint firstItem="l3h-1w-DhA" firstAttribute="top" secondItem="vW5-eb-wNU" secondAttribute="bottom" constant="8" id="lDg-qw-u1r"/>
                                             <constraint firstItem="7zk-03-mfp" firstAttribute="top" secondItem="l3h-1w-DhA" secondAttribute="bottom" constant="12" id="n6I-UA-uGg"/>
-                                            <constraint firstAttribute="trailing" secondItem="UlZ-YO-p0a" secondAttribute="trailing" constant="16" id="t2u-zH-6N6"/>
+                                            <constraint firstItem="nU4-Vp-2xW" firstAttribute="leading" secondItem="0kW-N9-K1N" secondAttribute="leading" constant="16" id="udw-My-0bt"/>
                                             <constraint firstAttribute="trailing" secondItem="l3h-1w-DhA" secondAttribute="trailing" constant="16" id="wH7-sM-FBz"/>
                                         </constraints>
                                     </view>
@@ -107,10 +110,10 @@
                         <viewLayoutGuide key="safeArea" id="Fbv-cD-9p8"/>
                     </view>
                     <connections>
-                        <outlet property="descriptionLabel" destination="UlZ-YO-p0a" id="JpN-iv-HH5"/>
-                        <outlet property="descriptionTextView" destination="UlZ-YO-p0a" id="uUo-9n-nJ9"/>
+                        <outlet property="descriptionWK" destination="nU4-Vp-2xW" id="jOY-vq-U9H"/>
                         <outlet property="linkBtn" destination="ZE8-f1-tTu" id="CKG-4o-Mwe"/>
                         <outlet property="scrollView" destination="rs5-w7-jEi" id="z9a-zA-qXg"/>
+                        <outlet property="thisView" destination="0kW-N9-K1N" id="9yp-CA-Juy"/>
                         <outlet property="titleTextView" destination="l3h-1w-DhA" id="2VC-qv-2NB"/>
                         <outlet property="topImage" destination="vW5-eb-wNU" id="FI5-PV-S5y"/>
                     </connections>

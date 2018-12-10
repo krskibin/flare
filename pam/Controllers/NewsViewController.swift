@@ -3,19 +3,20 @@ import Alamofire
 import Atributika
 import JGProgressHUD
 import SafariServices
+import WebKit
 
-class NewsViewController: UIViewController, UIScrollViewDelegate {
+class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDelegate {
     var pressedTitle: String?
     var pressedLink: String?
     var pressedImage: String?
 
-    @IBOutlet weak var descriptionLabel: UITextView!
     @IBOutlet weak var linkBtn: UIButton!
     @IBOutlet weak var topImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleTextView: UITextView!
-    @IBOutlet weak var descriptionTextView: UITextView!
-
+    @IBOutlet weak var descriptionWK: WKWebView!
+    @IBOutlet weak var thisView: UIView!
+    
     let myHud = JGProgressHUD(style: .light)
 
     override func viewDidLoad() {
@@ -41,8 +42,9 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
 
         self.scrollView.delegate = self
 
-        descriptionTextView.sizeToFit()
-        descriptionTextView.isScrollEnabled = false
+        descriptionWK.sizeToFit()
+        descriptionWK.scrollView.isScrollEnabled = false
+        descriptionWK.navigationDelegate = self
 
         let parser = Parser(articleLink: "", params: ["": ""])
         parser.performRequest(params: ["url": pressedLink!]) { result, error in
@@ -52,7 +54,7 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
             }
 
             // swiftlint:disable identifier_name
-            let links = Style.foregroundColor(.blue)
+            /*let links = Style.foregroundColor(.blue)
             let phoneNumbers = Style.backgroundColor(.yellow)
             let mentions = Style.font(.italicSystemFont(ofSize: 12)).foregroundColor(.black)
             let b = Style("b").font(.boldSystemFont(ofSize: 12))
@@ -68,7 +70,8 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
                 .stylePhoneNumbers(phoneNumbers)
                 .styleAll(all)
                 .attributedString
-
+*/
+            self.descriptionWK.loadHTMLString(result, baseURL: nil)
             self.myHud.dismiss()
         }
 
@@ -78,6 +81,11 @@ class NewsViewController: UIViewController, UIScrollViewDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("loaded")
+        webView.heightAnchor.constraint(equalToConstant: webView.scrollView.contentSize.height).isActive = true
     }
 
     @objc func showWebView() {
