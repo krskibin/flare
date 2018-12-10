@@ -48,11 +48,35 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
 
         let parser = Parser(articleLink: "", params: ["": ""])
         parser.performRequest(params: ["url": pressedLink!]) { result, error in
-            guard let result = result, error == nil else {
+            guard var result = result, error == nil else {
                 print(error ?? "")
                 return
             }
+            result = result.deleteHTMLTag(tag: "picture")
+            result = result.deleteHTMLTag(tag: "source")
+            result = result.deleteHTMLTag(tag: "img")
+            result = result.deleteHTMLTag(tag: "style")
+            result = result.deleteHTMLTag(tag: "script")
 
+            let style = """
+            <style>
+            #body {
+               font-size: 25px;
+               font-family: Arial, sans-serif;
+            }
+            p {
+                font-size: 25px;
+                font-family: Arial, sans-serif;
+            }
+            a {
+                color: black;
+                text-decoration: none;
+            }
+            </style>
+            <div id="body">
+            \(result)
+            </div>
+            """
             // swiftlint:disable identifier_name
             /*let links = Style.foregroundColor(.blue)
             let phoneNumbers = Style.backgroundColor(.yellow)
@@ -71,7 +95,7 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
                 .styleAll(all)
                 .attributedString
 */
-            self.descriptionWK.loadHTMLString(result, baseURL: nil)
+            self.descriptionWK.loadHTMLString(style, baseURL: nil)
             self.myHud.dismiss()
         }
 
@@ -126,5 +150,19 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
         activityViewController.popoverPresentationController?.sourceView = self.view
 
         self.present(activityViewController, animated: true, completion: nil)
+    }
+}
+
+extension String {
+    func deleteHTMLTag(tag:String) -> String {
+        return self.replacingOccurrences(of: "(?i)</?\(tag)\\b[^<]*>", with: "", options: .regularExpression, range: nil)
+    }
+    
+    func deleteHTMLTags(tags:[String]) -> String {
+        var mutableString = self
+        for tag in tags {
+            mutableString = mutableString.deleteHTMLTag(tag: tag)
+        }
+        return mutableString
     }
 }
