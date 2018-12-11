@@ -2,7 +2,7 @@ import UIKit
 
 class CustomScrollView: UIScrollView, UIScrollViewDelegate {
 
-    let fadePercentage: Double = 0.2
+    let fadePercentage: Double = 0.14
     let gradientLayer = CAGradientLayer()
     let transparentColor = UIColor.clear.cgColor
     let opaqueColor = UIColor.black.cgColor
@@ -12,7 +12,7 @@ class CustomScrollView: UIScrollView, UIScrollViewDelegate {
         let scrollContentSizeHeight = contentSize.height
         let scrollOffset = contentOffset.y
 
-        let alpha: CGFloat = (scrollViewHeight >= scrollContentSizeHeight || scrollOffset <= 0) ? 1 : 0
+        let alpha: CGFloat = (scrollViewHeight >= scrollContentSizeHeight || scrollOffset <= 0) ? 1 : 0.5
 
         let color = UIColor(white: 0, alpha: alpha)
         return color.cgColor

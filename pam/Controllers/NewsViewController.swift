@@ -21,6 +21,9 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        descriptionWK.isHidden = true
+        
         self.scrollView.scrollsToTop = false
         //self.navigationController?.navigationBar.isTranslucent = true
         self.myHud.textLabel.text = "Loading"
@@ -61,12 +64,14 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
             let style = """
             <style>
             #body {
-               font-size: 25px;
+               font-size: 42px;
                font-family: Arial, sans-serif;
+               line-height: 150%;
             }
             p {
-                font-size: 25px;
+                font-size: 42px;
                 font-family: Arial, sans-serif;
+                line-height: 150%;
             }
             a {
                 color: black;
@@ -96,7 +101,6 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
                 .attributedString
 */
             self.descriptionWK.loadHTMLString(style, baseURL: nil)
-            self.myHud.dismiss()
         }
 
         titleTextView.text = pressedTitle!
@@ -108,8 +112,14 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("loaded")
-        webView.heightAnchor.constraint(equalToConstant: webView.scrollView.contentSize.height).isActive = true
+        //webView.heightAnchor.constraint(equalToConstant: webView.scrollView.contentSize.height).isActive = false
+        print("loaded \(webView.scrollView.contentSize.height)")
+        //webView.heightAnchor.constraint(equalToConstant: webView.scrollView.contentSize.height).isActive = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+            webView.heightAnchor.constraint(equalToConstant: webView.scrollView.contentSize.height).isActive = true
+            webView.isHidden = false
+            self.myHud.dismiss()
+        })
     }
 
     @objc func showWebView() {
