@@ -32,11 +32,8 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
         if pressedImage != "" {
             let imageUrl = URL(string: pressedImage!)
             let data = try? Data(contentsOf: imageUrl!)
-            if data != nil {
-                topImage.image = UIImage(data: (data!))
-            } else {
-                topImage.image = UIImage(named: "placeholder")
-            }
+
+            topImage.image = UIImage(data: data!)
         }
 
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -60,6 +57,7 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
             }
             result = result.deleteHTMLTag(tag: "picture")
             result = result.deleteHTMLTag(tag: "source")
+            result = result.deleteHTMLTag(tag: "img")
             result = result.deleteHTMLTag(tag: "style")
             result = result.deleteHTMLTag(tag: "script")
 
@@ -78,9 +76,6 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
             a {
                 color: black;
                 text-decoration: none;
-            }
-            img {
-            width: 100%;
             }
             </style>
             <div id="body">
