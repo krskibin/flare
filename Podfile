@@ -27,5 +27,6 @@ target 'pam' do
   pod 'lottie-ios', '~> 2.5.2'
   pod 'JGProgressHUD', '~> 2.0.3'
   pod 'SearchTextField', '~> 1.2.2'
+  pod 'UIImageColors', '~> 2.0'
 
 end

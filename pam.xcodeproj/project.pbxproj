@@ -38,6 +38,7 @@
 		B85B07122178F4AB00A0EF93 /* RoundShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85B07112178F4AB00A0EF93 /* RoundShadowButton.swift */; };
 		B86F01C521B2E7D300BC4A82 /* SearchTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86F01C421B2E7D300BC4A82 /* SearchTextField.framework */; };
 		B88FEBC420D3B2B40035608F /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88FEBC320D3B2B40035608F /* CustomScrollView.swift */; };
+		B8D23D2821E0F4CB00580A68 /* UIImageColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8D23D2721E0F4CB00580A68 /* UIImageColors.framework */; };
 		B8DAD8CD20C9C5E400D2B7CF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */; };
 		B8DAD8CF20C9C80B00D2B7CF /* OnboardingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAD8CE20C9C80B00D2B7CF /* OnboardingTableViewController.swift */; };
 		B8DAD8D120C9CA1D00D2B7CF /* OnboardingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAD8D020C9CA1D00D2B7CF /* OnboardingTableViewCell.swift */; };
@@ -110,6 +111,9 @@
 		B85B07112178F4AB00A0EF93 /* RoundShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundShadowButton.swift; sourceTree = "<group>"; };
 		B86F01C421B2E7D300BC4A82 /* SearchTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SearchTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B88FEBC320D3B2B40035608F /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
+		B8CB349921E0F32200AE8938 /* ChameleonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChameleonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8CB349B21E0F35300AE8938 /* Nuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nuke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8D23D2721E0F4CB00580A68 /* UIImageColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIImageColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DAD8CC20C9C5E400D2B7CF /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = pam/Controllers/Onboarding/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		B8DAD8CE20C9C80B00D2B7CF /* OnboardingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTableViewController.swift; sourceTree = "<group>"; };
 		B8DAD8D020C9CA1D00D2B7CF /* OnboardingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTableViewCell.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8D23D2821E0F4CB00580A68 /* UIImageColors.framework in Frameworks */,
 				B86F01C521B2E7D300BC4A82 /* SearchTextField.framework in Frameworks */,
 				B8F4FB86217E75FD009D95F5 /* JGProgressHUD.framework in Frameworks */,
 				B85B06FC2178E68C00A0EF93 /* Alamofire.framework in Frameworks */,
@@ -273,6 +278,9 @@
 		695D3C392AB5477CD123F21E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B8D23D2721E0F4CB00580A68 /* UIImageColors.framework */,
+				B8CB349B21E0F35300AE8938 /* Nuke.framework */,
+				B8CB349921E0F32200AE8938 /* ChameleonFramework.framework */,
 				B86F01C421B2E7D300BC4A82 /* SearchTextField.framework */,
 				B8EE748F21A19365000D67E1 /* AutoInsetter.framework */,
 				B8EE749121A19365000D67E1 /* Pageboy.framework */,
@@ -503,6 +511,7 @@
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/UIImageColors/UIImageColors.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -515,6 +524,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIImageColors.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

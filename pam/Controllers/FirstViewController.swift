@@ -20,6 +20,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private var currentTabButton: UIButton?
     
     var articles: [Article]? = []
+    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
     
     @IBOutlet weak var newsTableView: UITableView!
     @IBOutlet weak var allButton: UIButton!
@@ -29,11 +30,18 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        label.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+        label.textAlignment = .center
+        label.text = "No data to show"
+        label.font = UIFont.boldSystemFont(ofSize: 18.0)
+        self.view.addSubview(label)
+        
         currentTabButton = allButton
         
         newsTableView.scrollsToTop = false
         newsTableView.delegate = self
         newsTableView.dataSource = self
+        newsTableView.tableFooterView = UIView()
         
         navigationController?.navigationBar.isTranslucent = true
         fetchArticles()
@@ -47,7 +55,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.autoresizesSubviews = false
         //fetchArticles()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.tintColor = UIColor(red:1.00, green:0.27, blue:0.32, alpha:1.0)
     }
     
     //swiftlint:disable:next function_body_length
@@ -113,7 +124,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 DispatchQueue.main.async {
                     self.newsTableView.reloadData()
                     if self.newsTableView.visibleCells.isEmpty {
-                        self.showAlert()
+                        self.label.isHidden = false
+                        //self.showAlert()
+                    } else {
+                        self.label.isHidden = true
                     }
                 }
                 
@@ -193,7 +207,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // ScrollView - Tab
-    
     func changeTabState(sender: UIButton) {
         sender.isEnabled = false
         sender.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)

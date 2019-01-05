@@ -26,7 +26,7 @@ class CustomScrollView: UIScrollView, UIScrollViewDelegate {
         let alpha: CGFloat = (scrollViewHeight >= scrollContentSizeHeight ||
             scrollOffset + scrollViewHeight >= scrollContentSizeHeight) ? 1 : 0
 
-        let color = UIColor(white: 0, alpha: alpha)
+        let color = UIColor(white: 0, alpha: 0.0)
         return color.cgColor
     }
 

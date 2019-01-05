@@ -4,6 +4,7 @@ import Atributika
 import JGProgressHUD
 import SafariServices
 import WebKit
+import UIImageColors
 
 class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDelegate {
     var pressedTitle: String?
@@ -33,7 +34,10 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
             let imageUrl = URL(string: pressedImage!)
             let data = try? Data(contentsOf: imageUrl!)
             if data != nil {
-                topImage.image = UIImage(data: (data!))
+                let image = UIImage(data: (data!))
+                topImage.image = image
+                let colors = image?.getColors()
+                navigationController?.navigationBar.tintColor = colors?.primary
             } else {
                 topImage.image = UIImage(named: "placeholder")
             }
