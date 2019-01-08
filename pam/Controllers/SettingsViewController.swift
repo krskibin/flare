@@ -2,7 +2,7 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    let versionNumber: String = "1.1"
+    let versionNumber: String = "2.0"
     @IBOutlet weak var versionViewLabel: UILabel!
     @IBOutlet weak var sourcesTableView: UITableView!
 
