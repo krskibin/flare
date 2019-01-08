@@ -45,17 +45,18 @@ func detectHTMLHeadIcons(_ document: HTMLDocument, baseURL: URL) -> [Icon] {
         case "shortcut icon":
             icons.append(Icon(url: url.absoluteURL, type: .shortcut))
         case "icon":
+            guard let type = link.attributes["type"] else { continue }
+            guard type.lowercased() == "image/png" else { continue }
             let sizes = parseHTMLIconSizes(link.attributes["sizes"])
             if sizes.count > 0 {
                 for size in sizes {
-                    let type = iconSizeTypeHints[size] ?? .classic
+                    guard let type = iconSizeTypeHints[size] else { continue }
                     icons.append(Icon(url: url, type: type, width: size.width, height: size.height))
                 }
             } else {
                 icons.append(Icon(url: url.absoluteURL, type: .classic))
             }
-        case "apple-touch-icon",
-             "apple-touch-icon-precomposed":
+        case "apple-touch-icon":
             let sizes = parseHTMLIconSizes(link.attributes["sizes"])
             if sizes.count > 0 {
                 for size in sizes {
@@ -70,17 +71,12 @@ func detectHTMLHeadIcons(_ document: HTMLDocument, baseURL: URL) -> [Icon] {
     }
 
     for meta in document.query(xpath: "/html/head/meta") {
-        if let name = meta.attributes["name"]?.lowercased() {
-            guard let content = meta.attributes["content"] else { continue }
-            guard let url = URL(string: content, relativeTo: baseURL) else { continue }
-            guard let size = microsoftSizeHints[name] else { continue }
-            icons.append(Icon(url: url, type: .microsoftPinnedSite, width: size.width, height: size.height))
-        } else if let property = meta.attributes["property"]?.lowercased() {
-            guard let content = meta.attributes["content"] else { continue }
-            guard property == "og:image" else { continue }
-            guard let imageURL = URL(string: content, relativeTo: baseURL) else { continue }
-            icons.append(Icon(url: imageURL, type: .openGraphImage))
-        }
+        guard let name = meta.attributes["name"]?.lowercased() else { continue }
+        guard let content = meta.attributes["content"] else { continue }
+        guard let url = URL(string: content, relativeTo: baseURL) else { continue }
+        guard let size = microsoftSizeHints[name] else { continue }
+
+        icons.append(Icon(url: url, type: .microsoftPinnedSite, width: size.width, height: size.height))
     }
 
     return icons
@@ -103,7 +99,7 @@ func detectWebAppManifestIcons(_ json: String, baseURL: URL) -> [Icon] {
     var icons: [Icon] = []
 
     guard let data = json.data(using: .utf8) else { return icons }
-    guard let object = try? JSONSerialization.jsonObject(with: data, options: []) else {
+    guard let object = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions()) else {
         return icons
     }
     guard let manifest = object as? [String: Any] else { return icons }

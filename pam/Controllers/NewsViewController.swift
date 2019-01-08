@@ -62,11 +62,15 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
                 print(error ?? "")
                 return
             }
-            result = result.deleteHTMLTag(tag: "picture")
-            result = result.deleteHTMLTag(tag: "source")
-            result = result.deleteHTMLTag(tag: "style")
-            result = result.deleteHTMLTag(tag: "script")
-
+            let tagName = "img"
+            result = result.deleteHTMLTags(tags: ["picture", "source", "style", "script"])
+            
+            let websiteArray = ["www.theverge.com", "www.thenextweb.com"]
+            
+            if websiteArray.contains("\(URL(string: self.pressedLink!)!.host!)") {
+                result = result.replaceMatched(pattern: "(?i)</?\(tagName)\\b[^<]*>")
+            }
+            
             let style = """
             <style>
             #body {
@@ -83,6 +87,10 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
                 color: black;
                 text-decoration: none;
             }
+            iframe {
+                width: 100%;
+                height: 500px;
+            }
             img {
             width: 100%;
             }
@@ -91,24 +99,6 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
             \(result)
             </div>
             """
-            // swiftlint:disable identifier_name
-            /*let links = Style.foregroundColor(.blue)
-            let phoneNumbers = Style.backgroundColor(.yellow)
-            let mentions = Style.font(.italicSystemFont(ofSize: 12)).foregroundColor(.black)
-            let b = Style("b").font(.boldSystemFont(ofSize: 12))
-            let u = Style("u").underlineStyle(.styleSingle)
-            let h1 = Style("h2").font(.boldSystemFont(ofSize: 22))
-            let all = Style.font(.systemFont(ofSize: 16)).foregroundColor(.black)
-
-            self.descriptionTextView.attributedText = result
-                .style(tags: u, b, h1)
-                .styleMentions(mentions)
-                .styleHashtags(links)
-                .styleLinks(links)
-                .stylePhoneNumbers(phoneNumbers)
-                .styleAll(all)
-                .attributedString
-*/
             self.descriptionWK.loadHTMLString(style, baseURL: nil)
         }
 
@@ -122,7 +112,7 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         //webView.heightAnchor.constraint(equalToConstant: webView.scrollView.contentSize.height).isActive = false
-        print("loaded \(webView.scrollView.contentSize.height)")
+        //print("loaded \(webView.scrollView.contentSize.height)")
         //webView.heightAnchor.constraint(equalToConstant: webView.scrollView.contentSize.height).isActive = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
             webView.heightAnchor.constraint(equalToConstant: webView.scrollView.contentSize.height).isActive = true
@@ -132,10 +122,10 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
     }
 
     @objc func showWebView() {
-        let svc = SFSafariViewController(url: URL(string: pressedLink!)!)
-        svc.modalPresentationStyle = .overFullScreen
-        svc.preferredControlTintColor = Colors.myRed
-        present(svc, animated: true, completion: nil)
+        let safariVC = SFSafariViewController(url: URL(string: pressedLink!)!)
+        safariVC.modalPresentationStyle = .overFullScreen
+        safariVC.preferredControlTintColor = Colors.myRed
+        present(safariVC, animated: true, completion: nil)
     }
 
     func setTransluscentNavBar() {
@@ -173,15 +163,35 @@ class NewsViewController: UIViewController, UIScrollViewDelegate, WKNavigationDe
 }
 
 extension String {
-    func deleteHTMLTag(tag:String) -> String {
-        return self.replacingOccurrences(of: "(?i)</?\(tag)\\b[^<]*>", with: "", options: .regularExpression, range: nil)
+    func deleteHTMLTag(tagName: String) -> String {
+        return self.replacingOccurrences(of: "(?i)</?\(tagName)\\b[^<]*>", with: "", options: .regularExpression, range: nil)
     }
     
-    func deleteHTMLTags(tags:[String]) -> String {
+    func deleteHTMLTags(tags: [String]) -> String {
         var mutableString = self
-        for tag in tags {
-            mutableString = mutableString.deleteHTMLTag(tag: tag)
+        for tagName in tags {
+            mutableString = mutableString.deleteHTMLTag(tagName: tagName)
         }
         return mutableString
+    }
+    
+    func matches(for regex: String) -> [String] {
+        do {
+            let regex = try NSRegularExpression(pattern: regex)
+            let results = regex.matches(in: self, range: NSRange(self.startIndex..., in: self))
+            return results.map {
+                String(self[Range($0.range, in: self)!])
+            }
+        } catch let error {
+            return []
+        }
+    }
+    
+    func replaceMatched(pattern: String) -> String {
+        if let matched = self.matches(for: pattern).first {
+            return self.replacingOccurrences(of: matched, with: "<img>")
+        } else {
+            return self
+        }
     }
 }

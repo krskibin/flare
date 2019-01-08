@@ -25,10 +25,10 @@ class OnboardingViewController: UIViewController {
         if device.userInterfaceIdiom == .phone {
             switch UIScreen.main.nativeBounds.height {
             case 1920, 2208, 2436, 2688, 1792:
-                print("very big iPhone")
+                //print("very big iPhone")
                 welcomeLabel.isHidden = false
             case 1136:
-                print("retarded iPhone 4-inch")
+                //print("retarded iPhone 4-inch")
                 welcomeLabel.isHidden = false
                 lottieLogoCN.constant = 10
                 lottieHeightCN.constant = 190

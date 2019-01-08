@@ -1,29 +1,29 @@
 PODS:
-  - Alamofire (4.8.0)
-  - AlamofireObjectMapper (5.2.0):
-    - Alamofire (~> 4.7)
-    - ObjectMapper (~> 3.4)
-  - Atributika (4.4.3)
-  - FavIcon (3.0.6)
+  - Alamofire (4.7.0)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
+  - Atributika (4.4.1)
+  - FavIcon (3.0.3)
   - JGProgressHUD (2.0.3)
   - lottie-ios (2.5.2)
   - Nuke (7.5.1)
   - ObjectMapper (3.4.1)
   - SearchTextField (1.2.2)
-  - SwiftLint (0.25.1)
-  - UIImageColors (2.0.1)
+  - SwiftLint (0.25.0)
+  - UIImageColors (2.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.7)
-  - AlamofireObjectMapper (~> 5.0)
-  - Atributika (~> 4.4.1)
-  - FavIcon (~> 3.0.0)
-  - JGProgressHUD (~> 2.0.3)
-  - lottie-ios (~> 2.5.2)
-  - Nuke (~> 7.5.1)
-  - SearchTextField (~> 1.2.2)
-  - SwiftLint (~> 0.25.0)
-  - UIImageColors (~> 2.0)
+  - Alamofire (= 4.7)
+  - AlamofireObjectMapper (= 5.0)
+  - Atributika (= 4.4.1)
+  - FavIcon (= 3.0.3)
+  - JGProgressHUD (= 2.0.3)
+  - lottie-ios (= 2.5.2)
+  - Nuke (= 7.5.1)
+  - SearchTextField (= 1.2.2)
+  - SwiftLint (= 0.25.0)
+  - UIImageColors (= 2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -40,18 +40,18 @@ SPEC REPOS:
     - UIImageColors
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
-  Atributika: c2ecee6c96af80c29d6ed1606e70fa137e51790f
-  FavIcon: e07ba9dd3cac1f76b81ccaa08fc2b41baa000b07
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  Atributika: 6c4d2a789a18ed64f2f5e7fe696da22973d8af0d
+  FavIcon: d574c025fb64c307d3246370baf838e3ae881edd
   JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   Nuke: 3814db501e55f17951451839c726ffd91641e9a5
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
   SearchTextField: a0992739d4b05dcbb40fb3a5cc6526bd991bdd23
-  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
-  UIImageColors: c83669aff7ceb55a3b3f2c398f3b5c14632a267b
+  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+  UIImageColors: 3ae0150e539342697808281a3975fe5dec2024ce
 
-PODFILE CHECKSUM: fb79cd8f557234fbca7ea79807b15e310e5712bf
+PODFILE CHECKSUM: ba0b670d3fab46b7f5a6e13488b5ecb848dd1530
 
 COCOAPODS: 1.5.3

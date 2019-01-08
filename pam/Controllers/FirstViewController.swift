@@ -5,7 +5,17 @@ import Nuke
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let nukeOptions = ImageLoadingOptions(
         placeholder: UIImage(named: "placeholder"),
-        failureImage: UIImage(named: "failure_image"),
+        failureImage: UIImage(named: "placeholder"),
+        contentModes: .init(
+            success: .scaleAspectFill,
+            failure: .center,
+            placeholder: .center
+        )
+    )
+    
+    let nukeFavOptions = ImageLoadingOptions(
+        placeholder: UIImage(named: "earth"),
+        failureImage: UIImage(named: "FeedIcon"),
         contentModes: .init(
             success: .scaleAspectFill,
             failure: .center,
@@ -174,11 +184,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.newsLabel.numberOfLines = 0
         
         do {
-            try FavIcon.downloadPreferred((articles?[indexPath.item].link)!) { result in
-            if case let .success(image) = result {
-                cell.faviconImage.image = image
+            try FavIcon.scan((articles?[indexPath.item].link)!) {result in
+                if let imageUrl = result.last?.url {
+                    var request = ImageRequest(url: imageUrl)
+                    request.memoryCacheOptions.isWriteAllowed = false
+                    request.priority = .high
+                    loadImage(with: request, options: self.nukeFavOptions, into: cell.faviconImage)
+                } else {
+                    cell.faviconImage.image = UIImage(named: "FeedIcon")
+                }
             }
-        }
         } catch {
             print("error")
         }

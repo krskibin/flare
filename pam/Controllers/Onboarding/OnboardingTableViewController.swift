@@ -32,7 +32,7 @@ class OnboardingTableViewController: UITableViewController {
 
     @IBAction func endOnboarding(_ sender: Any) {
         UserDefaults.standard.set(selectedSites, forKey: "selectedSitesDictionary")
-        print(selectedSites)
+        //print(selectedSites)
         UserDefaults.standard.set(true, forKey: "FIRST_TIME")
         performSegue(withIdentifier: "MainView", sender: nil)
     }
@@ -64,9 +64,9 @@ class OnboardingTableViewController: UITableViewController {
         if cell?.accessoryType == UITableViewCellAccessoryType.checkmark {
             cell?.accessoryType = UITableViewCellAccessoryType.none
             var curArray = selectedSites[section[indexPath.section]]
-            print("Zaznaczone strony z danej kategorii: \(curArray!)")
+            //print("Zaznaczone strony z danej kategorii: \(curArray!)")
             curArray = curArray?.filter { $0 != sites[indexPath.section][indexPath.row] }
-            print("Zaznaczone strony z danej kategorii po usunięciu: \(curArray!)")
+            //print("Zaznaczone strony z danej kategorii po usunięciu: \(curArray!)")
             selectedSites[section[indexPath.section]] = curArray
             //selectedSites.removeValue(forKey: sites[indexPath.section][indexPath.row])
         } else {
@@ -76,8 +76,8 @@ class OnboardingTableViewController: UITableViewController {
             //var newArray: [String] = selectedSites[section[indexPath.section]].append(sites[indexPath.section][indexPath.row])
             //selectedSites.updateValue(newArray, forKey: section[indexPath.section])
         }
-        print(selectedSites)
-        print(indexPath)
+        //print(selectedSites)
+        //print(indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
